@@ -58,6 +58,17 @@ const UserController = {
       res.status(500).send("Unexpected error looking for the users");
     }
   },
+  async deleteOne(req, res) {
+    try {
+      await User.deleteOne({
+        _id: req.params._id,
+      });
+      res.send("User deleted successfully");
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Unexpected error deleting the user");
+    }
+  },
 };
 
 module.exports = UserController;
