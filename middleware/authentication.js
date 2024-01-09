@@ -13,11 +13,47 @@ const authentication = async (req, res, next) => {
     req.user = user;
     next();
   } catch (error) {
-    console.error(error);
-    return res
-      .status(500)
-      .send({ error, message: "Something happened with the token" });
+    if (error.name === "TokenExpiredError") {
+      return res.status(401).send({ message: "The token has expired" });
+    } else if (error.name === "JsonWebTokenError") {
+      return res.status(401).send({ message: "Error with token" });
+    } else {
+      console.error(error);
+      return res
+        .status(500)
+        .send({ error, message: "Something happened with the token" });
+    }
   }
 };
 
-module.exports = { authentication };
+const isAdmin = (req, res, next) => {
+  const admin = ["admin", "superAdmin"];
+  if (!admin.includes(req.user.role)) {
+    return res.status(403).send({
+      message: "You do not have permission",
+    });
+  }
+  next(); // administrador de la finca
+};
+
+const isSuperAdmin = (req, res, next) => {
+  const superAdmin = "superAdmin";
+  if (req.user.role !== superAdmin) {
+    return res.status(403).send({
+      message: "You do not have permission",
+    });
+  }
+  next(); // devs
+};
+
+const isOwner = (req, res, next) => {
+  const owner = ["owner", "superAdmin"];
+  if (!owner.includes(req.user.role)) {
+    return res.status(403).send({
+      message: "You do not have permission",
+    });
+  }
+  next(); // propietario
+};
+
+module.exports = { authentication, isAdmin, isSuperAdmin, isOwner };
