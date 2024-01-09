@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const jwt_secret = process.env.JWT_SECRET;
 
 const UserController = {
-  async register(req, res) {
+  async register(req, res, next) {
     try {
       let hash = "";
       if (req.body.password) {
@@ -17,8 +17,7 @@ const UserController = {
       });
       res.status(201).send({ message: "User created successfully", user });
     } catch (error) {
-      console.error(error);
-      res.status(500).send("Unexpected error creating the user");
+      next(error);
     }
   },
   async login(req, res) {
