@@ -17,7 +17,7 @@ const UserSchema = new mongoose.Schema(
       trim: true,
     },
     phone: {
-      type: BigInt,
+      type: Number,
       required: [true, "Please enter your phone number"],
     },
     password: {
@@ -26,8 +26,9 @@ const UserSchema = new mongoose.Schema(
     },
     role: {
       type: String,
-      default: "User",
+      default: "Tenant",
     },
+    tokens: [],
   },
   { timestamps: true }
 );
