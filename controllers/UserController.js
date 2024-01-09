@@ -60,11 +60,22 @@ const UserController = {
   },
   async deleteOne(req, res) {
     try {
-      await User.findByIdAndDelete(req.user._id)
+      await User.findByIdAndDelete(req.user._id);
       res.send("User deleted successfully");
     } catch (error) {
       console.error(error);
       res.status(500).send("Unexpected error deleting the user");
+    }
+  },
+  async logout(req, res) {
+    try {
+      const user = await User.findByIdAndUpdate(req.user._id, {
+        $pull: { tokens: req.headers.authorization },
+      });
+      res.send({ message: `See you soon ${user.firstName}` });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Unexpected error in the logout");
     }
   },
 };
