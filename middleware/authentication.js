@@ -26,9 +26,9 @@ const authentication = async (req, res, next) => {
   }
 };
 
-const isAdmin = (req, res, next) => {
-  const admin = ["admin", "superAdmin"];
-  if (!admin.includes(req.user.role)) {
+const isAdministrator = (req, res, next) => {
+  const administrator = ["administrator", "superAdmin"];
+  if (!administrator.includes(req.user.role)) {
     return res.status(403).send({
       message: "You do not have permission",
     });
@@ -56,4 +56,4 @@ const isOwner = (req, res, next) => {
   next(); // propietario
 };
 
-module.exports = { authentication, isAdmin, isSuperAdmin, isOwner };
+module.exports = { authentication, isAdministrator, isSuperAdmin, isOwner };

@@ -78,6 +78,20 @@ const UserController = {
       res.status(500).send("Unexpected error in the logout");
     }
   },
+  async getLoggedUser(req, res) {
+    try {
+      const user = await User.findById({ _id: req.user._id }).select(
+        "-__v"
+      );
+      // .populate()
+      res.status(200).send(user);
+    } catch (error) {
+      console.log(error);
+      res
+        .status(500)
+        .send({ message: "Error while trying to get the current user" });
+    }
+  },
 };
 
 module.exports = UserController;

@@ -2,12 +2,22 @@ const express = require("express");
 const router = express.Router();
 
 const UserController = require("../controllers/UserController");
-const { authentication, isAdmin } = require("../middleware/authentication");
+const {
+  authentication,
+  isSuperAdmin,
+  isAdministrator,
+} = require("../middleware/authentication");
 
 router.post("/register", UserController.register);
 router.post("/login", UserController.login);
-router.get("/getAll", authentication, isAdmin, UserController.getAll);
+router.get(
+  "/getAll",
+  authentication,
+  isAdministrator,
+  UserController.getAll
+);
 router.delete("/deleteOne", authentication, UserController.deleteOne);
 router.delete("/logout", authentication, UserController.logout);
+router.get("/profile", authentication, UserController.getLoggedUser);
 
 module.exports = router;
