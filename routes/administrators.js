@@ -23,7 +23,7 @@ router.delete(
   isAdministrator,
   AdministratorController.logout
 );
-// router.get("/profile", AdministratorAuthentication, AdministratorController.getLoggedAdministrator);
+router.get("/profile", AdministratorAuthentication, AdministratorController.getLoggedAdministrator);
 // router.put("/update", AdministratorAuthentication, AdministratorController.update);
 
 module.exports = router;

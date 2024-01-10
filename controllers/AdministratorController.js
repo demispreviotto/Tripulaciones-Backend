@@ -82,6 +82,22 @@ const AdministratorController = {
       res.status(500).send({ message: "Unexpected error in the logout" });
     }
   },
+  async getLoggedAdministrator(req, res) {
+    try {
+      const administrator = await Administrator.findById({
+        _id: req.administrator._id,
+      }).select("-__v");
+      // .populate()
+      res.status(200).send(administrator);
+    } catch (error) {
+      console.log(error);
+      res
+        .status(500)
+        .send({
+          message: "Error while trying to get the current administrator",
+        });
+    }
+  },
 };
 
 module.exports = AdministratorController;
