@@ -10,14 +10,10 @@ const {
 
 router.post("/register", UserController.register);
 router.post("/login", UserController.login);
-router.get(
-  "/getAll",
-  authentication,
-  isAdministrator,
-  UserController.getAll
-);
+router.get("/getAll", authentication, isAdministrator, UserController.getAll);
 router.delete("/deleteOne", authentication, UserController.deleteOne);
 router.delete("/logout", authentication, UserController.logout);
 router.get("/profile", authentication, UserController.getLoggedUser);
+router.put("/update", authentication, UserController.update);
 
 module.exports = router;
