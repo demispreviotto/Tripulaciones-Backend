@@ -16,7 +16,7 @@ router.get(
   isAdministrator || isSuperAdmin,
   AdministratorController.getAll
 );
-// router.delete("/deleteOne", AdministratorAuthentication, AdministratorController.deleteOne);
+router.delete("/deleteOne", AdministratorAuthentication, AdministratorController.deleteOne);
 router.delete(
   "/logout",
   AdministratorAuthentication,
@@ -24,6 +24,6 @@ router.delete(
   AdministratorController.logout
 );
 router.get("/profile", AdministratorAuthentication, AdministratorController.getLoggedAdministrator);
-// router.put("/update", AdministratorAuthentication, AdministratorController.update);
+router.put("/update", AdministratorAuthentication, AdministratorController.update);
 
 module.exports = router;

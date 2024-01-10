@@ -68,6 +68,17 @@ const AdministratorController = {
         .send({ message: "Unexpected error looking for the administrators" });
     }
   },
+  async deleteOne(req, res) {
+    try {
+      await Administrator.findByIdAndDelete(req.administrator._id);
+      res.send({ message: "Administrator deleted successfully" });
+    } catch (error) {
+      console.error(error);
+      res
+        .status(500)
+        .send({ message: "Unexpected error deleting the administrator" });
+    }
+  },
   async logout(req, res) {
     try {
       const administrator = await Administrator.findByIdAndUpdate(
@@ -91,11 +102,29 @@ const AdministratorController = {
       res.status(200).send(administrator);
     } catch (error) {
       console.log(error);
+      res.status(500).send({
+        message: "Error while trying to get the current administrator",
+      });
+    }
+  },
+  async update(req, res) {
+    try {
+      const administrator = await Administrator.findByIdAndUpdate(
+        req.administrator._id,
+        req.body,
+        {
+          new: true,
+        }
+      );
+      res.send({
+        message: "Administrator updated successfully",
+        administrator,
+      });
+    } catch (error) {
+      console.error(error);
       res
         .status(500)
-        .send({
-          message: "Error while trying to get the current administrator",
-        });
+        .send({ message: "Unexpected error updating the administrator" });
     }
   },
 };
