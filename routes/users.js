@@ -3,17 +3,22 @@ const router = express.Router();
 
 const UserController = require("../controllers/UserController");
 const {
-  authentication,
+  UserAuthentication,
   isSuperAdmin,
   isAdministrator,
 } = require("../middleware/authentication");
 
 router.post("/register", UserController.register);
 router.post("/login", UserController.login);
-router.get("/getAll", authentication, isAdministrator, UserController.getAll);
-router.delete("/deleteOne", authentication, UserController.deleteOne);
-router.delete("/logout", authentication, UserController.logout);
-router.get("/profile", authentication, UserController.getLoggedUser);
-router.put("/update", authentication, UserController.update);
+router.get(
+  "/getAll",
+  UserAuthentication,
+  isAdministrator || isSuperAdmin,
+  UserController.getAll
+);
+router.delete("/deleteOne", UserAuthentication, UserController.deleteOne);
+router.delete("/logout", UserAuthentication, UserController.logout);
+router.get("/profile", UserAuthentication, UserController.getLoggedUser);
+router.put("/update", UserAuthentication, UserController.update);
 
 module.exports = router;

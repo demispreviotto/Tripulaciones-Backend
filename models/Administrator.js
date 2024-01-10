@@ -30,7 +30,7 @@ const AdministratorSchema = new mongoose.Schema(
     },
     role: {
       type: String,
-      default: "admin",
+      default: "administrator",
     },
     confirmed: Boolean,
     tokens: [],
