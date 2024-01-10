@@ -42,10 +42,10 @@ const UserController = {
       await user.save();
       return res
         .status(200)
-        .send({ msg: `Welcome ${user.firstName}`, token, user });
+        .send({ message: `Welcome ${user.firstName}`, token, user });
     } catch (error) {
       console.error(error);
-      res.status(500).send("Unexpected error in the login");
+      res.status(500).send({ message: "Unexpected error in the login" });
     }
   },
   async getAll(req, res) {
@@ -54,16 +54,18 @@ const UserController = {
       res.send(users);
     } catch (error) {
       console.error(error);
-      res.status(500).send("Unexpected error looking for the users");
+      res
+        .status(500)
+        .send({ message: "Unexpected error looking for the users" });
     }
   },
   async deleteOne(req, res) {
     try {
       await User.findByIdAndDelete(req.user._id);
-      res.send("User deleted successfully");
+      res.send({ message: "User deleted successfully" });
     } catch (error) {
       console.error(error);
-      res.status(500).send("Unexpected error deleting the user");
+      res.status(500).send({ message: "Unexpected error deleting the user" });
     }
   },
   async logout(req, res) {
@@ -74,14 +76,12 @@ const UserController = {
       res.send({ message: `See you soon ${user.firstName}` });
     } catch (error) {
       console.error(error);
-      res.status(500).send("Unexpected error in the logout");
+      res.status(500).send({ message: "Unexpected error in the logout" });
     }
   },
   async getLoggedUser(req, res) {
     try {
-      const user = await User.findById({ _id: req.user._id }).select(
-        "-__v"
-      );
+      const user = await User.findById({ _id: req.user._id }).select("-__v");
       // .populate()
       res.status(200).send(user);
     } catch (error) {
@@ -89,6 +89,17 @@ const UserController = {
       res
         .status(500)
         .send({ message: "Error while trying to get the current user" });
+    }
+  },
+  async update(req, res) {
+    try {
+      const user = await User.findByIdAndUpdate(req.user._id, req.body, {
+        new: true,
+      });
+      res.send({ message: "User updated successfully", user });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send({ message: "Unexpected error updating the user" });
     }
   },
 };
