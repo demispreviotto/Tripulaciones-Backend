@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/users", require("./routes/users"));
+app.use("/administrators", require("./routes/administrators"));
 
 app.use(handleTypeError);
 
