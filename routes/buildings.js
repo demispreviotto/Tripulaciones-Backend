@@ -1,8 +1,8 @@
-const BuildingController = require("../controllers/BuildingController");
-const { authentication, isAdmin } = require("../middleware/authentication");
-
 const express = require("express");
 const router = express.Router();
+
+const BuildingController = require("../controllers/BuildingController");
+const { authentication } = require("../middleware/authentication");
 
 router.post("/create", authentication, BuildingController.createBuilding);
 router.get("/getAll", authentication, BuildingController.getAllBuildings);

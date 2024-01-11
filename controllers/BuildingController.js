@@ -2,32 +2,38 @@ require("dotenv").config();
 const Building = require("../models/Building");
 
 const BuildingController = {
-  async createBuilding(req, res) {
+  async createBuilding(req, res, next) {
     try {
       const building = new Building(req.body);
       await building.save();
-      res.status(201).json(building);
+      res
+        .status(201)
+        .send({ message: "Building created successfully", building });
     } catch (error) {
-      res.status(400).json({ error: error.message });
+      next(error);
     }
   },
   async getAllBuildings(req, res) {
     try {
       const buildings = await Building.find();
-      res.json(buildings);
+      res.send(buildings);
     } catch (error) {
-      res.status(500).json({ error: error.message });
+      res
+        .status(500)
+        .send({ message: "Unexpected error looking for the buildings" });
     }
   },
   async getBuildingById(req, res) {
     try {
       const building = await Building.findById(req.params.id);
       if (!building) {
-        return res.status(404).json({ error: "Building not found" });
+        return res.status(404).send({ message: "Building not found" });
       }
-      res.json(building);
+      res.send(building);
     } catch (error) {
-      res.status(500).json({ error: error.message });
+      res
+        .status(500)
+        .send({ message: "Unexpected error looking for the building" });
     }
   },
   async updateBuildingById(req, res) {
@@ -38,11 +44,13 @@ const BuildingController = {
         { new: true }
       );
       if (!building) {
-        return res.status(404).json({ error: "Building not found" });
+        return res.status(404).send({ message: "Building not found" });
       }
-      res.json(building);
+      res.send({ message: "Building updated successfully", building });
     } catch (error) {
-      res.status(400).json({ error: error.message });
+      res
+        .status(400)
+        .send({ message: "Unexpected error updating the builing" });
     }
   },
   async deleteBuildingById(req, res) {
@@ -52,11 +60,13 @@ const BuildingController = {
         .status(200)
         .send({ message: "Building deleted successfully", building });
       if (!building) {
-        return res.status(404).json({ error: "Building not found" });
+        return res.status(404).send({ message: "Building not found" });
       }
-      res.json(building);
+      res.send(building);
     } catch (error) {
-      res.status(500).json({ error: error.message });
+      res
+        .status(500)
+        .send({ message: "Unexpected error deleting the building" });
     }
   },
 };
