@@ -1,0 +1,19 @@
+const mongoose = require("mongoose");
+const ObjectId = mongoose.SchemaType.ObjectId;
+
+const DoorSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: [true, "Please enter the name of the door"],
+    },
+    incidenceIds: [{ type: ObjectId, ref: "Incidence" }],
+    ownerIds: [{ type: ObjectId, ref: "Owner" }],
+    serviceIds: [{ type: ObjectId, ref: "Service" }],
+  },
+  { timestamps: true }
+);
+
+const Door = mongoose.model("Door", DoorSchema);
+
+module.exports = Door;

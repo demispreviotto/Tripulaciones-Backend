@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-// const ObjectId = mongoose.SchemaType.ObjectId;
+const ObjectId = mongoose.SchemaType.ObjectId;
 
 const BuildingSchema = new mongoose.Schema(
   {
@@ -7,8 +7,8 @@ const BuildingSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please enter the address of the building"],
     },
-    // serviceIds: [{type: ObjetcId, ref: "Service"}]
-    // doorIds: [{type: ObjectId, ref: "Door"}],
+    serviceIds: [{ type: ObjectId, ref: "Service" }],
+    doorIds: [{ type: ObjectId, ref: "Door" }],
   },
   { timestamps: true }
 );
