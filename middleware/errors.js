@@ -1,6 +1,6 @@
 const handleValidationErrors = (error, res) => {
   const errors = Object.values(error.errors).map((element) => element.message);
-
+  for (let i = 0; i < errors.length; i++) { console.log(errors[i]) }
   if (errors.length > 1) {
     const errorMessages = errors.join(" && ");
 
@@ -8,7 +8,7 @@ const handleValidationErrors = (error, res) => {
   } else {
     res.status(400).send({ message: errors });
   }
-  console.error("Validation Error:", error);
+  // console.error("Validation Error:", error);
 };
 
 const handleTypeError = (error, req, res, next) => {

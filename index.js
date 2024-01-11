@@ -14,6 +14,8 @@ app.use(cors());
 app.use("/users", require("./routes/users"));
 app.use("/incidences", require("./routes/incidences"));
 app.use("/owners", require("./routes/owners"));
+app.use("/buildings", require("./routes/buildings"));
+app.use("/doors", require("./routes/doors"));
 
 app.use(handleTypeError);
 
