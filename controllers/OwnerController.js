@@ -33,7 +33,7 @@ const OwnerController = {
   },
   async update(req, res) {
     try {
-      const owner = await Owner.findByIdAndUpdate(req.owner._id, req.body, {
+      const owner = await Owner.findByIdAndUpdate(req.params._id, req.body, {
         new: true,
       });
       res.send({ message: "Owner updated successfully", owner });
