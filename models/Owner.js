@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
-const ObjectId = mongoose.SchemaType.ObjectId;
+const ObjectId = mongoose.Types.ObjectId;
 
 const OwnerSchema = new mongoose.Schema(
   {
     firstName: {
       type: String,
-      required: [true, "Please enter the name of the owner"],
+      required: [true, "Please enter the first name of the owner"],
     },
     lastName: {
       type: String,

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const ObjectId = mongoose.SchemaType.ObjectId;
+const ObjectId = mongoose.Types.ObjectId;
 
 const ServiceSchema = new mongoose.Schema(
   {
@@ -22,6 +22,11 @@ const ServiceSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please enter the contact email"],
     },
+    rate: [
+      {
+        type: Number,
+      },
+    ],
   },
   { timestamps: true }
 );

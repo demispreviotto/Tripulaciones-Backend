@@ -13,6 +13,7 @@ app.use(cors());
 
 app.use("/users", require("./routes/users"));
 app.use("/incidences", require("./routes/incidences"));
+app.use("/owners", require("./routes/owners"));
 
 app.use(handleTypeError);
 

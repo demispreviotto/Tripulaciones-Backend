@@ -36,4 +36,4 @@ const isAdmin = (req, res, next) => {
   next(); // devs
 };
 
-module.exports = { authentication, isUser, isAdmin };
+module.exports = { authentication, isAdmin };
