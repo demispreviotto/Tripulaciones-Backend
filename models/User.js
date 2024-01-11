@@ -26,9 +26,10 @@ const UserSchema = new mongoose.Schema(
     },
     role: {
       type: String,
-      default: "tenant",
+      default: "user",
     },
     tokens: [],
+    // buildingIds: [{type: ObjectId, ref: "Building"}],
   },
   { timestamps: true }
 );
