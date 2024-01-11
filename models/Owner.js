@@ -20,6 +20,8 @@ const OwnerSchema = new mongoose.Schema(
       required: [true, "Please enter the email of the owner"],
     },
     doorId: [{ type: ObjectId, ref: "Door" }],
+    incidenceIds: [{ type: ObjectId, ref: "Incidence" }],
+    buildingIds: [{ type: ObjectId, ref: "Building" }],
   },
   { timestamps: true }
 );
