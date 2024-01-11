@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const ObjectId = mongoose.SchemaType.ObjectId;
 
 const UserSchema = new mongoose.Schema(
   {
@@ -29,7 +30,7 @@ const UserSchema = new mongoose.Schema(
       default: "user",
     },
     tokens: [],
-    // buildingIds: [{type: ObjectId, ref: "Building"}],
+    buildingIds: [{ type: ObjectId, ref: "Building" }],
   },
   { timestamps: true }
 );
