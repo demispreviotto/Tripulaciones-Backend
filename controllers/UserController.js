@@ -28,7 +28,7 @@ const UserController = {
           .status(400)
           .send({ message: "Please enter email and password" });
       }
-      const user = await User.findOne({ email: req.body.email });
+      const user = await User.findOne({ email: req.body.email }).populate({ path: "buildingIds", select: "address" });
       if (!user) {
         return res.status(400).send({ message: "Incorrect email or password" });
       }
