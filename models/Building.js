@@ -7,6 +7,9 @@ const BuildingSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please enter the address of the building"],
     },
+    name: {
+      type: String,
+    },
     number: {
       type: Number,
       required: [true, "Please enter the address number"],
@@ -23,6 +26,7 @@ const BuildingSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please enter the province"],
     },
+    createdBy: [{ type: ObjectId, ref: "User" }],
     serviceIds: [{ type: ObjectId, ref: "Service" }],
     doorIds: [{ type: ObjectId, ref: "Door" }],
   },

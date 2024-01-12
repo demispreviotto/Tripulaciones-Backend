@@ -4,7 +4,11 @@ const Building = require("../models/Building");
 const BuildingController = {
   async createBuilding(req, res, next) {
     try {
-      const building = new Building(req.body);
+      const userId = req.user.id;
+      const building = new Building({
+        ...req.body,
+        createdBy: userId
+      });
       await building.save();
       res
         .status(201)

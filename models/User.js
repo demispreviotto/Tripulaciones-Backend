@@ -29,6 +29,9 @@ const UserSchema = new mongoose.Schema(
       type: String,
       default: "user",
     },
+    company: {
+      type: String,
+    },
     tokens: [],
     buildingIds: [{ type: ObjectId, ref: "Building" }],
   },
