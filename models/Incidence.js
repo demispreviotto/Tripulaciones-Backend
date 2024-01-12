@@ -6,7 +6,7 @@ const IncidenceSchema = new mongoose.Schema(
     summary: String,
     theme: String,
     originalMessage: String,
-    services: String,
+    // services: String,
     state: String,
   },
   { timestamps: true }
