@@ -7,6 +7,10 @@ const BuildingSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please enter the address of the building"],
     },
+    number: {
+      type: Number,
+      required: [true, "Please enter the address number"],
+    },
     zipCode: {
       type: Number,
       required: [true, "Please enter the zip code"],
