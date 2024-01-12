@@ -4,7 +4,7 @@ const IncidenceSchema = new mongoose.Schema(
   {
     userId: String,
     summary: String,
-    theme: String,
+    category: String,
     originalMessage: String,
     // services: String,
     state: String,
