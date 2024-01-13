@@ -28,7 +28,12 @@ const UserController = {
           .status(400)
           .send({ message: "Please enter email and password" });
       }
-      const user = await User.findOne({ email: req.body.email }).populate({ path: "buildingIds", select: "address" });
+      const user = await User.findOne({ email: req.body.email })
+        .populate(
+          {
+            path: "buildingIds",
+            select: "address, number, incidenceIds"
+          });
       if (!user) {
         return res.status(400).send({ message: "Incorrect email or password" });
       }
@@ -81,7 +86,7 @@ const UserController = {
   },
   async getLoggedUser(req, res) {
     try {
-      const user = await User.findById({ _id: req.user._id }).select("-__v");
+      const user = await User.findById({ _id: req.user._id });
       // .populate()
       res.status(200).send(user);
     } catch (error) {
