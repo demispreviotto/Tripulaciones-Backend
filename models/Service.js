@@ -7,7 +7,6 @@ const ServiceSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please enter the name of the company"],
     },
-    incidenceIds: [{ type: ObjectId, ref: "Incidence" }],
     theme: [
       {
         type: String,
@@ -22,11 +21,8 @@ const ServiceSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please enter the contact email"],
     },
-    rate: [
-      {
-        type: Number,
-      },
-    ],
+    rate: [{ type: Number }],
+    incidenceIds: [{ type: ObjectId, ref: "Incidence" }],
   },
   { timestamps: true }
 );

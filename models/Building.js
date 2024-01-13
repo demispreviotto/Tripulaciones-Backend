@@ -7,9 +7,6 @@ const BuildingSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please enter the address of the building"],
     },
-    name: {
-      type: String,
-    },
     number: {
       type: Number,
       required: [true, "Please enter the address number"],
