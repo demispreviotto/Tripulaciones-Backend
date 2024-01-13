@@ -2,12 +2,13 @@ const mongoose = require("mongoose");
 
 const IncidenceSchema = new mongoose.Schema(
   {
-    userId: String,
     summary: String,
     category: String,
     originalMessage: String,
-    // services: String,
     state: String,
+    doorIds: [{ type: ObjectId, ref: "Door" }],
+    ownerIds: [{ type: ObjectId, ref: "Owner" }],
+    buildingId: { type: ObjectId, ref: "Building" },
   },
   { timestamps: true }
 );

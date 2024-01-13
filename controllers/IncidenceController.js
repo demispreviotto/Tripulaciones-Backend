@@ -16,7 +16,7 @@ const IncidenceController = {
   },
   async getAll(req, res) {
     try {
-      const incidences = Incidence.find();
+      const incidences = await Incidence.find();
       res.send(incidences);
       if (incidences.length < 1) {
         return res.send({ message: "The're not incidences" });

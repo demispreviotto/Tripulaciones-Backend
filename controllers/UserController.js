@@ -32,8 +32,12 @@ const UserController = {
         .populate(
           {
             path: "buildingIds",
-            select: "address, number, incidenceIds"
-          });
+            select: "address, number",
+            populate: {
+              path: "doorIds",
+              select: "incidenceIds"
+            }
+          })
       if (!user) {
         return res.status(400).send({ message: "Incorrect email or password" });
       }

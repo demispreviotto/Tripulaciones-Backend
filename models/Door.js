@@ -9,7 +9,6 @@ const DoorSchema = new mongoose.Schema(
     },
     incidenceIds: [{ type: ObjectId, ref: "Incidence" }],
     ownerIds: [{ type: ObjectId, ref: "Owner" }],
-    // serviceIds: [{ type: ObjectId, ref: "Service" }],
     buildingId: { type: ObjectId, ref: "Building" },
   },
   { timestamps: true }

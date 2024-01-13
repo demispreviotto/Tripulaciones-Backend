@@ -29,6 +29,7 @@ const BuildingSchema = new mongoose.Schema(
     createdBy: [{ type: ObjectId, ref: "User" }],
     serviceIds: [{ type: ObjectId, ref: "Service" }],
     doorIds: [{ type: ObjectId, ref: "Door" }],
+    incidenceIds: [{ type: ObjectId, ref: "Incidence" }],
   },
   { timestamps: true }
 );
