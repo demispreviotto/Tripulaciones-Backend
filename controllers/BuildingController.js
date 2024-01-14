@@ -1,5 +1,6 @@
 require("dotenv").config();
 const Building = require("../models/Building");
+const User = require("../models/User");
 
 const BuildingController = {
   async createBuilding(req, res, next) {
@@ -9,6 +10,11 @@ const BuildingController = {
         ...req.body,
         createdBy: userId
       });
+      await User.findByIdAndUpdate(
+        req.user._id,
+        { $push: { buildingIds: building._id } },
+        { new: true }
+      );
       await building.save();
       res
         .status(201)
