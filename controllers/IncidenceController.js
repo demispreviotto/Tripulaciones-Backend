@@ -71,7 +71,16 @@ const IncidenceController = {
   },
   async getAllIncidences(req, res) {
     try {
-      const incidences = await Incidence.find();
+      const incidences = await Incidence.find()
+        .populate(
+          {
+            path: "buildingIds",
+            select: "address, number",
+            // populate: {
+            //   path: "doorIds",
+            //   select: "incidenceIds"
+            // }
+          });
       res.send(incidences);
       if (incidences.length < 1) {
         return res.send({ message: "The're not incidences" });

@@ -25,7 +25,15 @@ const BuildingController = {
   },
   async getAllBuildings(req, res) {
     try {
-      const buildings = await Building.find();
+      const buildings = await Building.find().populate(
+        {
+          path: "incidenceIds",
+          select: "status",
+          // populate: {
+          //   path: "doorIds",
+          //   select: "incidenceIds"
+          // }
+        });;
       res.send(buildings);
     } catch (error) {
       res

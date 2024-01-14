@@ -27,6 +27,7 @@ const BuildingSchema = new mongoose.Schema(
     serviceIds: [{ type: ObjectId, ref: "Service" }],
     doorIds: [{ type: ObjectId, ref: "Door" }],
     incidenceIds: [{ type: ObjectId, ref: "Incidence" }],
+    todoIds: [{ type: ObjectId, ref: "Todo" }],
   },
   { timestamps: true }
 );
