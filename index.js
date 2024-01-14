@@ -17,6 +17,7 @@ app.use("/owners", require("./routes/owners"));
 app.use("/buildings", require("./routes/buildings"));
 app.use("/doors", require("./routes/doors"));
 app.use("/services", require("./routes/services"));
+app.use("/todos", require("./routes/todos"));
 
 app.use(handleTypeError);
 
