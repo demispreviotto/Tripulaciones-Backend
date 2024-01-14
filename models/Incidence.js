@@ -6,7 +6,7 @@ const IncidenceSchema = new mongoose.Schema(
     summary: String,
     category: String,
     originalMessage: String,
-    state: String,
+    status: String,
     doorIds: [{ type: ObjectId, ref: "Door" }],
     ownerIds: [{ type: ObjectId, ref: "Owner" }],
     buildingId: { type: ObjectId, ref: "Building" },
