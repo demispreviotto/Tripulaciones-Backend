@@ -1,68 +1,108 @@
 const Todo = require("../models/Todo");
 
 const TodoController = {
-  async createTodo(req, res, next) {
-    try {
-      const todo = await Todo.create(req.body);
-      res.status(201).send({ message: "Tarea creada exitosamente", todo });
-    } catch (error) {
-      next(error);
-    }
-  },
+    async createTodo(req, res, next) {
+        try {
+            const {
+                tittle,
+                description,
+                completed,
+                buildingId,
+                doorIds,
+                ownerIds,
+            } = req.body;
+            const todo = await Todo.create({
+                tittle,
+                description,
+                completed,
+                buildingId,
+                doorIds,
+                ownerIds,
+            });
 
-  async getAllTodo(req, res) {
-    try {
-      const todos = await Todo.find();
-      res.send(todos);
-      if (todos.length < 1) {
-        return res.send({ message: "No hay tareas" });
-      }
-    } catch (error) {
-      console.error(error);
-      res.status(500).send({ message: "Error en la búsqueda de las tareas" });
-    }
-  },
+            // Associate incidence with building
+            if (buildingId) {
+                const building = await Building.findById(buildingId);
+                if (building) {
+                    building.incidenceIds.push(incidence._id);
+                    await building.save();
+                }
+            }
+            // Associate incidence with doors
+            if (doorIds && doorIds.length > 0) {
+                const doors = await Door.find({ _id: { $in: doorIds } });
+                doors.forEach((door) => {
+                    door.incidenceIds.push(incidence._id);
+                    door.save();
+                });
+            }
+            // Associate incidence with owners
+            if (ownerIds && ownerIds.length > 0) {
+                const owners = await Owner.find({ _id: { $in: ownerIds } });
+                owners.forEach((owner) => {
+                    owner.incidenceIds.push(incidence._id);
+                    owner.save();
+                });
+            }
+            res.status(201).send({ message: "Tarea creada exitosamente", todo });
+        } catch (error) {
+            next(error);
+        }
+    },
 
-  async getTodoById(req, res) {
-    try {
-      const todo = await Todo.findById(req.params.id);
-      if (!todo) {
-        return res.status(404).send({ message: "Tarea no encontrada" });
-      }
-      res.send(todo);
-    } catch (error) {
-      console.error(error);
-      res.status(500).send({ message: "Error en la búsqueda de la tarea" });
-    }
-  },
+    async getAllTodo(req, res) {
+        try {
+            const todos = await Todo.find();
+            res.send(todos);
+            if (todos.length < 1) {
+                return res.send({ message: "No hay tareas" });
+            }
+        } catch (error) {
+            console.error(error);
+            res.status(500).send({ message: "Error en la búsqueda de las tareas" });
+        }
+    },
 
-  async updateTodo(req, res) {
-    try {
-      const todo = await Todo.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
-      });
-      if (!todo) {
-        return res.status(404).send({ message: "Tarea no encontrada" });
-      }
-      res.send({ message: "Tarea modificada exitosamente", todo });
-    } catch (error) {
-      console.error(error);
-      res.status(500).send({ message: "Error al modificar la tarea" });
-    }
-  },
+    async getTodoById(req, res) {
+        try {
+            const todo = await Todo.findById(req.params.id);
+            if (!todo) {
+                return res.status(404).send({ message: "Tarea no encontrada" });
+            }
+            res.send(todo);
+        } catch (error) {
+            console.error(error);
+            res.status(500).send({ message: "Error en la búsqueda de la tarea" });
+        }
+    },
 
-  async deleteTodo(req, res) {
-    try {
-      const todo = await Todo.findByIdAndDelete(req.params.id);
-      if (!todo) {
-        return res.status(404).send({ message: "Tarea no encontrada" });
-      }
-      res.status(200).send({ message: "Tarea eliminada exitosamente", todo });
-    } catch (error) {
-      console.error(error);
-      res.status(500).send({ message: "Error al eliminar la tarea" });
-    }
-  },
+    async updateTodo(req, res) {
+        try {
+            const todo = await Todo.findByIdAndUpdate(req.params.id, req.body, {
+                new: true,
+            });
+            if (!todo) {
+                return res.status(404).send({ message: "Tarea no encontrada" });
+            }
+            res.send({ message: "Tarea modificada exitosamente", todo });
+        } catch (error) {
+            console.error(error);
+            res.status(500).send({ message: "Error al modificar la tarea" });
+        }
+    },
+
+    async deleteTodo(req, res) {
+        try {
+            const todo = await Todo.findByIdAndDelete(req.params.id);
+            if (!todo) {
+                return res.status(404).send({ message: "Tarea no encontrada" });
+            }
+            res.status(200).send({ message: "Tarea eliminada exitosamente", todo });
+        } catch (error) {
+            console.error(error);
+            res.status(500).send({ message: "Error al eliminar la tarea" });
+        }
+    },
 };
 
 module.exports = TodoController;
