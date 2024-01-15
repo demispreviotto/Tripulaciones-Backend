@@ -32,7 +32,7 @@ const UserController = {
         .populate(
           {
             path: "buildingIds",
-            select: "address, number",
+            select: "address number",
             populate: {
               path: "doorIds",
               select: "incidenceIds"

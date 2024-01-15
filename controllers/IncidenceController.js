@@ -74,8 +74,8 @@ const IncidenceController = {
       const incidences = await Incidence.find()
         .populate(
           {
-            path: "buildingIds",
-            select: "address, number",
+            path: "buildingId",
+            select: "address number",
             // populate: {
             //   path: "doorIds",
             //   select: "incidenceIds"
