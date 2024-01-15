@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const ObjectId = mongoose.Types.ObjectId;
 
 const TodoSchema = new mongoose.Schema(
     {
@@ -13,6 +14,7 @@ const TodoSchema = new mongoose.Schema(
             type: Boolean,
             default: false,
         },
+        buildingId: [{ type: ObjectId, ref: "Building" }]
     },
     { timestamps: true }
 );
