@@ -5,8 +5,9 @@ const OwnerController = {
   async create(req, res, next) {
     try {
       const owner = await Owner.create(req.body);
-      console.log("hola")
-      res.status(201).send({ message: "Owner created successfully", owner });
+      res
+        .status(201)
+        .send({ message: "Propietario creado exitosamente", owner });
     } catch (error) {
       next(error);
     }
@@ -19,16 +20,16 @@ const OwnerController = {
       console.error(error);
       res
         .status(500)
-        .send({ message: "Unexpected error looking for the owners" });
+        .send({ message: "Error en la búsqueda de los propietarios" });
     }
   },
   async delete(req, res) {
     try {
       await Owner.findByIdAndDelete(req.params._id);
-      res.send({ message: "Owner deleted successfully" });
+      res.send({ message: "Propietario eliminado exitosamente" });
     } catch (error) {
       console.error(error);
-      res.status(500).send({ message: "Unexpected error deleting the owner" });
+      res.status(500).send({ message: "Error eliminando al usuario" });
     }
   },
   async update(req, res) {
@@ -36,10 +37,10 @@ const OwnerController = {
       const owner = await Owner.findByIdAndUpdate(req.params._id, req.body, {
         new: true,
       });
-      res.send({ message: "Owner updated successfully", owner });
+      res.send({ message: "Propietario modificado exitosamente", owner });
     } catch (error) {
       console.error(error);
-      res.status(500).send({ message: "Unexpected error updating the owner" });
+      res.status(500).send({ message: "Error modificando al propietario" });
     }
   },
 };

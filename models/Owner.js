@@ -5,19 +5,22 @@ const OwnerSchema = new mongoose.Schema(
   {
     firstName: {
       type: String,
-      required: [true, "Please enter the first name of the owner"],
+      required: [true, "Por favor inserte el nombre del propietario"],
     },
     lastName: {
       type: String,
-      required: [true, "Please enter the last name of the owner"],
+      required: [true, "Por favor inserte el apellido del propietario"],
     },
     phone: {
       type: String,
-      required: [true, "Please enter the phone of the owner"],
+      required: [
+        true,
+        "Por favor inserte el número de teléfono del propietario",
+      ],
     },
     email: {
       type: String,
-      required: [true, "Please enter the email of the owner"],
+      required: [true, "Por favor inserte el correo del propietario"],
     },
     doorIds: [{ type: ObjectId, ref: "Door" }],
     incidenceIds: [{ type: ObjectId, ref: "Incidence" }],

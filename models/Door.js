@@ -5,7 +5,7 @@ const DoorSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Please enter the name of the door"],
+      required: [true, "Por favor inserte el nombre de la puerta"],
     },
     incidenceIds: [{ type: ObjectId, ref: "Incidence" }],
     ownerIds: [{ type: ObjectId, ref: "Owner" }],

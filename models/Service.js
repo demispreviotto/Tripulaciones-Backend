@@ -5,21 +5,21 @@ const ServiceSchema = new mongoose.Schema(
   {
     company: {
       type: String,
-      required: [true, "Please enter the name of the company"],
+      required: [true, "Por favor inserte el nombre de la empresa"],
     },
     theme: [
       {
         type: String,
-        required: [true, "Please enter a theme"],
+        required: [true, "Por favor inserte el tema"],
       },
     ],
     contactNumber: {
       type: Number,
-      required: [true, "Please enter the contact number"],
+      required: [true, "Por favor inserte el número de contacto"],
     },
     contactEmail: {
       type: String,
-      required: [true, "Please enter the contact email"],
+      required: [true, "Por favor inserte el correo de contacto"],
     },
     rate: [{ type: Number }],
     incidenceIds: [{ type: ObjectId, ref: "Incidence" }],

@@ -8,7 +8,7 @@ const BuildingController = {
       const userId = req.user.id;
       const building = new Building({
         ...req.body,
-        createdBy: userId
+        createdBy: userId,
       });
       await User.findByIdAndUpdate(
         req.user._id,
@@ -16,42 +16,37 @@ const BuildingController = {
         { new: true }
       );
       await building.save();
-      res
-        .status(201)
-        .send({ message: "Building created successfully", building });
+      res.status(201).send({ message: "Finca creada exitosamente", building });
     } catch (error) {
       next(error);
     }
   },
   async getAllBuildings(req, res) {
     try {
-      const buildings = await Building.find().populate(
-        {
-          path: "incidenceIds",
-          select: "status",
-          // populate: {
-          //   path: "doorIds",
-          //   select: "incidenceIds"
-          // }
-        });;
+      const buildings = await Building.find().populate({
+        path: "incidenceIds",
+        select: "status",
+        // populate: {
+        //   path: "doorIds",
+        //   select: "incidenceIds"
+        // }
+      });
       res.send(buildings);
     } catch (error) {
-      res
-        .status(500)
-        .send({ message: "Unexpected error looking for the buildings" });
+      console.error(error);
+      res.status(500).send({ message: "Error en la búsqueda de las fincas" });
     }
   },
   async getBuildingById(req, res) {
     try {
       const building = await Building.findById(req.params.id);
       if (!building) {
-        return res.status(404).send({ message: "Building not found" });
+        return res.status(404).send({ message: "Finca no encontrada" });
       }
       res.send(building);
     } catch (error) {
-      res
-        .status(500)
-        .send({ message: "Unexpected error looking for the building" });
+      console.error(error);
+      res.status(500).send({ message: "Error en la búsqueda de la finca" });
     }
   },
   async updateBuildingById(req, res) {
@@ -62,13 +57,12 @@ const BuildingController = {
         { new: true }
       );
       if (!building) {
-        return res.status(404).send({ message: "Building not found" });
+        return res.status(404).send({ message: "Finca no encontrada" });
       }
-      res.send({ message: "Building updated successfully", building });
+      res.send({ message: "Finca modificada exitosamente", building });
     } catch (error) {
-      res
-        .status(400)
-        .send({ message: "Unexpected error updating the builing" });
+      console.error(error);
+      res.status(500).send({ message: "Error modificando la finca" });
     }
   },
   async deleteBuildingById(req, res) {
@@ -76,15 +70,14 @@ const BuildingController = {
       const building = await Building.findByIdAndDelete(req.params.id);
       res
         .status(200)
-        .send({ message: "Building deleted successfully", building });
+        .send({ message: "Finca eliminada exitosamente", building });
       if (!building) {
-        return res.status(404).send({ message: "Building not found" });
+        return res.status(404).send({ message: "Finca no encontrada" });
       }
       res.send(building);
     } catch (error) {
-      res
-        .status(500)
-        .send({ message: "Unexpected error deleting the building" });
+      console.error(error);
+      res.status(500).send({ message: "Error eliminando la finca" });
     }
   },
 };

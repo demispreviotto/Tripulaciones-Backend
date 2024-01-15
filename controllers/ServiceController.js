@@ -1,17 +1,15 @@
 const Service = require("../models/Service");
 
 const ServiceController = {
-  async createService(req, res) {
+  async createService(req, res, next) {
     try {
       const service = new Service(req.body);
       await service.save();
       res
         .status(201)
-        .send({ message: "Service created successfully", service });
+        .send({ message: "Servicio creado exitosamente", service });
     } catch (error) {
-      res
-        .status(400)
-        .send({ message: "Unexpected error creating the service" });
+      next(error);
     }
   },
   async getAllServices(req, res) {
@@ -19,22 +17,24 @@ const ServiceController = {
       const services = await Service.find();
       res.send(services);
     } catch (error) {
+      console.error(error);
       res
         .status(500)
-        .send({ message: "Unexpected error looking for the services" });
+        .send({ message: "Error en la búsqueda de los servicios" });
     }
   },
   async getServiceById(req, res) {
     try {
       const service = await Service.findById(req.params.id);
       if (!service) {
-        return res.status(404).send({ message: "Service not found" });
+        return res.status(404).send({ message: "Servicio no encontrado" });
       }
       res.send(service);
     } catch (error) {
+      console.error(error);
       res
         .status(500)
-        .send({ message: "Unexpected error looking for the service" });
+        .send({ message: "Error en la búsqueda de los servicios" });
     }
   },
   async updateServiceById(req, res) {
@@ -43,26 +43,24 @@ const ServiceController = {
         new: true,
       });
       if (!service) {
-        return res.status(404).send({ message: "Service not found" });
+        return res.status(404).send({ message: "Servicio no encontrado" });
       }
-      res.send({ message: "Service updated successfully", service });
+      res.send({ message: "Servicio modificado exitosamente", service });
     } catch (error) {
-      res
-        .status(400)
-        .send({ message: "Unexpected error updating the service" });
+      console.error(error);
+      res.status(400).send({ message: "Error modificando el servicio" });
     }
   },
   async deleteServiceById(req, res) {
     try {
       const service = await Service.findByIdAndDelete(req.params.id);
       if (!service) {
-        return res.status(404).send({ error: "Service not found" });
+        return res.status(404).send({ error: "Servicio no encontrado" });
       }
-      res.send({ message: "Service deleted successfully", service });
+      res.send({ message: "Servicio eliminado exitosamente", service });
     } catch (error) {
-      res
-        .status(500)
-        .send({ message: "Unexpected error deleting the service" });
+      console.error(error);
+      res.status(500).send({ message: "Error eliminando el servicio" });
     }
   },
 };

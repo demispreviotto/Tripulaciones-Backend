@@ -1,13 +1,13 @@
 const Door = require("../models/Door");
 
 const DoorController = {
-  async createDoor(req, res) {
+  async createDoor(req, res, next) {
     try {
       const door = new Door(req.body);
       await door.save();
-      res.status(201).send({ message: "Door created successfully", door });
+      res.status(201).send({ message: "Puerta creada exitosamente", door });
     } catch (error) {
-      res.status(400).send({ message: "Unexpected error creating the door" });
+      next(error);
     }
   },
   async getAllDoors(req, res) {
@@ -15,22 +15,20 @@ const DoorController = {
       const doors = await Door.find();
       res.send(doors);
     } catch (error) {
-      res
-        .status(500)
-        .send({ message: "Unexpected error looking for the doors" });
+      console.error(error);
+      res.status(500).send({ message: "Error en la búsqueda de las puertas" });
     }
   },
   async getDoorById(req, res) {
     try {
       const door = await Door.findById(req.params.id);
       if (!door) {
-        return res.status(404).send({ message: "Door not found" });
+        return res.status(404).send({ message: "Puerta no encontrada" });
       }
       res.send(door);
     } catch (error) {
-      res
-        .status(500)
-        .send({ message: "Unexpected error looking for the door" });
+      console.error(error);
+      res.status(500).send({ message: "Error en la búsqueda de la puerta" });
     }
   },
   async updateDoorById(req, res) {
@@ -39,22 +37,24 @@ const DoorController = {
         new: true,
       });
       if (!door) {
-        return res.status(404).send({ message: "Door not found" });
+        return res.status(404).send({ message: "Puerta no encontrada" });
       }
-      res.send({ message: "Door updated successfully", door });
+      res.send({ message: "Puerta modificada exitosamente", door });
     } catch (error) {
-      res.status(400).send({ message: "Unexpected error updating the door" });
+      console.error(error);
+      res.status(500).send({ message: "Error modificando la puerta" });
     }
   },
   async deleteDoorById(req, res) {
     try {
       const door = await Door.findByIdAndDelete(req.params.id);
       if (!door) {
-        return res.status(404).send({ message: "Door not found" });
+        return res.status(404).send({ message: "Puerta no encontrada" });
       }
-      res.send({ message: "Door deleted successfully", door });
+      res.send({ message: "Puerta eliminada exitosamente", door });
     } catch (error) {
-      res.status(500).send({ message: "Unexpected error deleting the door" });
+      console.error(error);
+      res.status(500).send({ message: "Error eliminando la puerta" });
     }
   },
 };

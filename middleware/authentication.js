@@ -8,20 +8,20 @@ const authentication = async (req, res, next) => {
     const payload = jwt.verify(token, jwt_secret);
     const user = await User.findOne({ _id: payload._id, tokens: token });
     if (!user) {
-      return res.status(401).send({ message: "You're not authorized" });
+      return res.status(401).send({ message: "No estás autorizado" });
     }
     req.user = user;
     next();
   } catch (error) {
     if (error.name === "TokenExpiredError") {
-      return res.status(401).send({ message: "The token has expired" });
+      return res.status(401).send({ message: "El token expiró" });
     } else if (error.name === "JsonWebTokenError") {
-      return res.status(401).send({ message: "Error with token" });
+      return res.status(401).send({ message: "Error con el token" });
     } else {
       console.error(error);
       return res
         .status(500)
-        .send({ error, message: "Something happened with the token" });
+        .send({ error, message: "Algo sucedió con el token" });
     }
   }
 };
@@ -30,10 +30,10 @@ const isAdmin = (req, res, next) => {
   const admin = "admin";
   if (req.user.role !== admin) {
     return res.status(403).send({
-      message: "You do not have permission",
+      message: "No tienes permiso",
     });
   }
-  next(); // devs
+  next();
 };
 
 module.exports = { authentication, isAdmin };
