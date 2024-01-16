@@ -4,19 +4,79 @@ const Owner = require("../models/Owner");
 const Incidence = require("../models/Incidence");
 require("dotenv").config();
 
+const fs = require('fs').promises;
+const path = require('path');
+const incidenceDataPath = path.join(__dirname, '../data/incidenceData.json')
+
+const fetchMessages = async () => {
+  try {
+    // Read data from incidenceData.json
+    const data = await fs.readFile(incidenceDataPath, 'utf-8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error('Error in fetchMessages:', error);
+    throw error;
+  }
+};
+
+const updateMessageState = async (messageId, newState) => {
+  try {
+    // Assuming you have a function to find and update the state of a message in the data file
+    const messages = await fetchMessages();
+    const updatedMessages = messages.map((message) => {
+      if (message.id === messageId) {
+        return { ...message, state: newState };
+      }
+      return message;
+    });
+
+    // Update the data file with the modified messages
+    await fs.writeFile(incidenceDataPath, JSON.stringify(updatedMessages, null, 2), 'utf-8');
+  } catch (error) {
+    console.error('Error in updateMessageState:', error);
+    throw error;
+  }
+};
+
+const transformMessageToIncidence = (message) => ({
+  summary: message.summary,
+  category: message.category,
+  originalMessage: message.originalMessage,
+  status: 'received', // Set the status to "received" or any other desired value
+  doorIds: message.doorIds,
+  buildingId: message.buildingId,
+  ownerIds: message.ownerIds,
+});
+
 const IncidenceController = {
-  async createIncidence(req, res, next) {
+  async fetchAndCreateIncidences() {
     try {
-      const incidence = Incidence.create();
-      // atacar api de la ia
-      res.status(201).send(incidence);
+      // Fetch messages from wherever you are getting them
+      const messages = await fetchMessages();
+
+      if (messages.length === 0) {
+        console.log("No messages to process");
+        return [];
+      }
+
+      // Filter messages based on some criteria (e.g., state is "previous to received")
+      const filteredMessages = messages.filter((message) => message.state === "delivered");
+      const createdIncidences = [];
+
+      for (const message of filteredMessages) {
+        const incidenceData = transformMessageToIncidence(message);
+        const incidence = await Incidence.create(incidenceData);
+        await updateMessageState(message.id, 'received');
+        createdIncidences.push(incidence);
+      }
+
+      return createdIncidences;
     } catch (error) {
-      console.error(error);
-      res
-        .status(500)
-        .send({ message: "Unexpected error creating the incidence" });
+      console.error("Error in fetchAndCreateIncidences:", error);
+      throw error;
     }
   },
+
   async createManualIncidence(req, res) {
     try {
       const {

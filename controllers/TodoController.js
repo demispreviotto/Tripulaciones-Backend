@@ -1,10 +1,13 @@
+const Building = require("../models/Building");
+const Door = require("../models/Door");
+const Owner = require("../models/Owner");
 const Todo = require("../models/Todo");
 
 const TodoController = {
     async createTodo(req, res, next) {
         try {
             const {
-                tittle,
+                title,
                 description,
                 completed,
                 buildingId,
@@ -12,7 +15,7 @@ const TodoController = {
                 ownerIds,
             } = req.body;
             const todo = await Todo.create({
-                tittle,
+                title,
                 description,
                 completed,
                 buildingId,
@@ -20,27 +23,27 @@ const TodoController = {
                 ownerIds,
             });
 
-            // Associate incidence with building
+            // Associate todo with building
             if (buildingId) {
                 const building = await Building.findById(buildingId);
                 if (building) {
-                    building.incidenceIds.push(incidence._id);
+                    building.todoIds.push(todo._id);
                     await building.save();
                 }
             }
-            // Associate incidence with doors
+            // Associate todo with doors
             if (doorIds && doorIds.length > 0) {
                 const doors = await Door.find({ _id: { $in: doorIds } });
                 doors.forEach((door) => {
-                    door.incidenceIds.push(incidence._id);
+                    door.todoIds.push(todo._id);
                     door.save();
                 });
             }
-            // Associate incidence with owners
+            // Associate todo with owners
             if (ownerIds && ownerIds.length > 0) {
                 const owners = await Owner.find({ _id: { $in: ownerIds } });
                 owners.forEach((owner) => {
-                    owner.incidenceIds.push(incidence._id);
+                    owner.todoIds.push(todo._id);
                     owner.save();
                 });
             }
