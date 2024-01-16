@@ -26,10 +26,6 @@ const BuildingController = {
       const buildings = await Building.find().populate({
         path: "incidenceIds",
         select: "status",
-        // populate: {
-        //   path: "doorIds",
-        //   select: "incidenceIds"
-        // }
       });
       res.send(buildings);
     } catch (error) {
@@ -37,24 +33,6 @@ const BuildingController = {
       res.status(500).send({ message: "Error en la búsqueda de las fincas" });
     }
   },
-  // async getOwners(req, res) {
-  //   try {
-  //     const buildingId = req.params._id;
-  //     const building = await Building.findById(buildingId).populate({
-  //       path: "ownerIds",
-  //       select: "firstName lastName",
-  //     });
-  //     if (!building) {
-  //       return res.status(404).send({ message: "Finca no encontrada" });
-  //     }
-  //     res.status(200).send(building);
-  //   } catch (error) {
-  //     console.error(error);
-  //     res.status(500).send({
-  //       message: "Error en la búsqueda de los propietarios de la finca",
-  //     });
-  //   }
-  // },
   async getBuildingById(req, res) {
     try {
       const building = await Building.findById(req.params.id).populate({
