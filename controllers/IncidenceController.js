@@ -72,9 +72,11 @@ const IncidenceController = {
 
       return createdIncidences;
     } catch (error) {
-      next(error);
+      console.error("Error in fetchAndCreateIncidences:", error);
+      throw error;
     }
   },
+
   async createManualIncidence(req, res) {
     try {
       const {
@@ -86,6 +88,7 @@ const IncidenceController = {
         buildingId,
         ownerIds,
       } = req.body;
+
       const incidence = await Incidence.create({
         summary,
         category,
@@ -95,6 +98,7 @@ const IncidenceController = {
         buildingId,
         ownerIds,
       });
+      // Associate incidence with building
       if (buildingId) {
         const building = await Building.findById(buildingId);
         if (building) {
@@ -102,6 +106,7 @@ const IncidenceController = {
           await building.save();
         }
       }
+      // Associate incidence with doors
       if (doorIds && doorIds.length > 0) {
         const doors = await Door.find({ _id: { $in: doorIds } });
         doors.forEach((door) => {
@@ -109,6 +114,7 @@ const IncidenceController = {
           door.save();
         });
       }
+      // Associate incidence with owners
       if (ownerIds && ownerIds.length > 0) {
         const owners = await Owner.find({ _id: { $in: ownerIds } });
         owners.forEach((owner) => {
@@ -116,74 +122,78 @@ const IncidenceController = {
           owner.save();
         });
       }
-      res
-        .status(201)
-        .send({ message: "Incidencia creada exitosamente", incidence });
+
+      res.status(201).send({ message: "Manual incidence created successfully", incidence });
     } catch (error) {
-      next(error);
+      console.error(error);
+      res.status(500).send({ message: "Unexpected error creating the manual incidence" });
     }
   },
   async getAllIncidences(req, res) {
     try {
-      const incidences = await Incidence.find().populate({
-        path: "buildingId",
-        select: "address number",
-      });
+      const incidences = await Incidence.find()
+        .populate(
+          {
+            path: "buildingId",
+            select: "address number",
+            // populate: {
+            //   path: "doorIds",
+            //   select: "incidenceIds"
+            // }
+          });
       res.send(incidences);
       if (incidences.length < 1) {
-        return res.send({ message: "No hay incidencias" });
+        return res.send({ message: "The're not incidences" });
       }
     } catch (error) {
       console.error(error);
       res
         .status(500)
-        .send({ message: "Error en la búsqueda de las incidencias" });
+        .send({ message: "Unexpected error looking for the incidences" });
     }
   },
   async getIncidenceById(req, res) {
     try {
       const incidence = await Incidence.findById(req.params.id);
       if (!incidence) {
-        return res.status(404).send({ message: "Incidencia no encontrada" });
+        return res.status(404).send({ message: "Incidence not found" });
       }
       res.send(incidence);
     } catch (error) {
       console.error(error);
       res
         .status(500)
-        .send({ message: "Error en la búsqueda de la incidencia" });
+        .send({ message: "Unexpected error looking for the incidence" });
     }
   },
   async updateIncidence(req, res) {
     try {
-      const incidence = await Incidence.findByIdAndUpdate(
-        req.params.id,
-        req.body,
-        {
-          new: true,
-        }
-      );
+      const incidence = await Incidence.findByIdAndUpdate(req.params.id, req.body, {
+        new: true,
+      });
       if (!incidence) {
-        return res.status(404).send({ message: "Incidencia no encontrada" });
+        return res.status(404).send({ message: "Incidence not found" });
       }
-      res.send({ message: "Incidencia modificada exitosamente", incidence });
+      res.send({ message: "Incidence updated successfully", incidence });
     } catch (error) {
       console.error(error);
-      res.status(500).send({ message: "Error modificando la incidencia" });
+      res
+        .status(500)
+        .send({ message: "Unexpected error updating the incidence" });
     }
   },
   async deleteIncidence(req, res) {
     try {
       const incidence = await Incidence.findByIdAndDelete(req.params.id);
       if (!incidence) {
-        return res.status(404).send({ message: "Incidencia no encontrada" });
+        return res.status(404).send({ message: "Incidence not found" });
       }
-      res
-        .status(200)
-        .send({ message: "Incidencia eliminada exitosamente", incidence });
+      res.status(200).send({ message: "Incidence deleted successfully", incidence });
     } catch (error) {
       console.error(error);
-      res.status(500).send({ message: "Error eliminando la incidencia" });
+      res
+        .status(500)
+        .send({ message: "Unexpected error deleting the incidence" });
     }
   },
 };
