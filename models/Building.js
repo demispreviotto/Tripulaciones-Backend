@@ -28,6 +28,7 @@ const BuildingSchema = new mongoose.Schema(
     doorIds: [{ type: ObjectId, ref: "Door" }],
     incidenceIds: [{ type: ObjectId, ref: "Incidence" }],
     todoIds: [{ type: ObjectId, ref: "Todo" }],
+    ownerIds: [{ type: ObjectId, ref: "Owner" }],
   },
   { timestamps: true }
 );

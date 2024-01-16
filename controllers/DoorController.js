@@ -1,9 +1,26 @@
 const Door = require("../models/Door");
+const Building = require("../models/Building");
+const Owner = require("../models/Owner");
 
 const DoorController = {
   async createDoor(req, res, next) {
     try {
-      const door = new Door(req.body);
+      const { name, buildingId, ownerIds } = req.body;
+      const door = new Door({ name, buildingId, ownerIds });
+      if (buildingId) {
+        const building = await Building.findById(buildingId);
+        if (building) {
+          building.doorIds.push(door._id);
+          await building.save();
+        }
+      }
+      if (ownerIds) {
+        const owner = await Owner.findById(ownerIds);
+        if (owner) {
+          owner.doorIds.push(door._id);
+          await owner.save();
+        }
+      }
       await door.save();
       res.status(201).send({ message: "Puerta creada exitosamente", door });
     } catch (error) {
