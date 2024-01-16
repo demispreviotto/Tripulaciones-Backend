@@ -67,10 +67,6 @@ const IncidenceController = {
       const incidences = await Incidence.find().populate({
         path: "buildingId",
         select: "address number",
-        // populate: {
-        //   path: "doorIds",
-        //   select: "incidenceIds"
-        // }
       });
       res.send(incidences);
       if (incidences.length < 1) {
