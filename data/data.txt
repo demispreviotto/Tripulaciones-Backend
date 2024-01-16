@@ -1,0 +1,840 @@
+{
+        "index": 5,
+        "phone": "643844368",
+        "date": "23/07/2023 12:58",
+        "summary": "He observado humedad en las paredes del garaje, ¿es posible que se revise?",
+        "category": "Humedades",
+        "rate": 3.0,
+        "Servicio": "Mantenimiento áreas comunes",
+        "status": "delivered"
+    },
+    {
+        "index": 6,
+        "phone": "678901234",
+        "date": "06/09/2023 19:24",
+        "summary": "Me preocupan unas grietas que han aparecido en un pilar del sótano.",
+        "category": "Grietas",
+        "rate": 5.0,
+        "Servicio": "Pintura y reparación de paredes",
+        "status": "delivered"
+    },
+    {
+        "index": 7,
+        "phone": "621098765",
+        "date": "19/10/2023 07:31",
+        "summary": "He notado que la fachada está agrietada, podría ser importante echarle un vistazo.",
+        "category": "Grietas",
+        "rate": 3.0,
+        "Servicio": "Pintura y reparación de paredes",
+        "status": "delivered"
+    },
+    {
+        "index": 8,
+        "phone": "676789012",
+        "date": "01/12/2023 16:09",
+        "summary": "Sería ideal si se pudiera limpiar el suelo del vestíbulo, está bastante sucio.",
+        "category": "Suciedad",
+        "rate": 3.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 9,
+        "phone": "658876469",
+        "date": "14/01/2024 00:54",
+        "summary": "He visto que hay basura acumulada en la entrada principal, ¿podríamos organizar una limpieza?",
+        "category": "Suciedad",
+        "rate": 3.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 11,
+        "phone": "665947226",
+        "date": "12/04/2024 17:06",
+        "summary": "He notado que la luz del pasillo no funciona, ¿se podría arreglar pronto?",
+        "category": "Luz",
+        "rate": 4.0,
+        "Servicio": "Reparación instalaciones eléctricas",
+        "status": "delivered"
+    },
+    {
+        "index": 12,
+        "phone": "654321098",
+        "date": "25/05/2024 01:42",
+        "summary": "Buenos días, parece que hay un problema con la calefacción en el tercer piso.",
+        "category": "Tuberias",
+        "rate": 3.0,
+        "Servicio": "Fontanería",
+        "status": "delivered"
+    },
+    {
+        "index": 13,
+        "phone": "658521272",
+        "date": "07/07/2024 10:19",
+        "summary": "Hola, ¿sería posible revisar el aire acondicionado en la zona común? No enfría bien.",
+        "category": "Aire",
+        "rate": 3.0,
+        "Servicio": "Mantenimiento calefacción y aire acondicionado",
+        "status": "delivered"
+    },
+    {
+        "index": 14,
+        "phone": "643844368",
+        "date": "20/08/2024 18:55",
+        "summary": "Me he dado cuenta de que algunas luces del jardín no están funcionando.",
+        "category": "Luz",
+        "rate": 3.0,
+        "Servicio": "Reparación instalaciones eléctricas",
+        "status": "delivered"
+    },
+    {
+        "index": 16,
+        "phone": "654321098",
+        "date": "15/11/2024 12:07",
+        "summary": "He notado un olor extraño cerca de los contenedores de basura, ¿podría revisarse?",
+        "category": "Suciedad",
+        "rate": 2.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 17,
+        "phone": "643844368",
+        "date": "28/12/2024 20:43",
+        "summary": "Las puertas del ascensor tardan mucho en cerrarse, ¿es posible que se revise?",
+        "category": "Ascensor",
+        "rate": 3.0,
+        "Servicio": "Reparación ascensores",
+        "status": "delivered"
+    },
+    {
+        "index": 19,
+        "phone": "672101237",
+        "date": "16/04/2023 13:54",
+        "summary": "El grifo del área de lavandería está goteando constantemente.",
+        "category": "Tuberias",
+        "rate": 3.0,
+        "Servicio": "Fontanería",
+        "status": "delivered"
+    },
+    {
+        "index": 20,
+        "phone": "665947226",
+        "date": "29/05/2023 22:31",
+        "summary": "El espejo del vestíbulo está roto, ¿podría reemplazarse?",
+        "category": "Ascensor",
+        "rate": 3.0,
+        "Servicio": "Reparación ascensores",
+        "status": "delivered"
+    },
+    {
+        "index": 21,
+        "phone": "621098765",
+        "date": "11/07/2023 08:08",
+        "summary": "El intercomunicador del edificio parece estar fallando, no siempre funciona.",
+        "category": "Luz",
+        "rate": 3.0,
+        "Servicio": "Reparación instalaciones eléctricas",
+        "status": "delivered"
+    },
+    {
+        "index": 22,
+        "phone": "609876543",
+        "date": "24/08/2023 16:44",
+        "summary": "Hay una baldosa suelta en el pasillo del segundo piso, podría ser peligroso.",
+        "category": "Suciedad",
+        "rate": 3.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 23,
+        "phone": "612345678",
+        "date": "06/10/2023 01:21",
+        "summary": "Las plantas del jardín parecen necesitar más cuidados, se están secando.",
+        "category": "Suciedad",
+        "rate": 2.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 25,
+        "phone": "602316000",
+        "date": "02/01/2024 18:34",
+        "summary": "Algunas luces del estacionamiento parpadean constantemente.",
+        "category": "Luz",
+        "rate": 3.0,
+        "Servicio": "Reparación instalaciones eléctricas",
+        "status": "delivered"
+    },
+    {
+        "index": 26,
+        "phone": "612345678",
+        "date": "15/02/2024 03:11",
+        "summary": "El sensor de movimiento de la entrada no activa la luz como debería.",
+        "category": "Luz",
+        "rate": 3.0,
+        "Servicio": "Reparación instalaciones eléctricas",
+        "status": "delivered"
+    },
+    {
+        "index": 27,
+        "phone": "655302624",
+        "date": "29/03/2024 11:47",
+        "summary": "El banco del parque interior está roto, sería bueno reemplazarlo.",
+        "category": "Suciedad",
+        "rate": 3.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 28,
+        "phone": "609876543",
+        "date": "11/05/2024 20:23",
+        "summary": "Hay un problema con el desagüe en el baño común del primer piso.",
+        "category": "Tuberías",
+        "rate": 3.0,
+        "Servicio": "Fontanería",
+        "status": "delivered"
+    },
+    {
+        "index": 29,
+        "phone": "667439773",
+        "date": "24/06/2024 04:00",
+        "summary": "El teclado numérico de la puerta trasera a veces no responde.",
+        "category": "Ascensor",
+        "rate": 2.0,
+        "Servicio": "Reparación ascensores",
+        "status": "delivered"
+    },
+    {
+        "index": 30,
+        "phone": "638489963",
+        "date": "06/08/2024 12:36",
+        "summary": "El ascensor hace un ruido extraño al llegar al quinto piso.",
+        "category": "Ascensor",
+        "rate": 3.0,
+        "Servicio": "Reparación ascensores",
+        "status": "delivered"
+    },
+    {
+        "index": 31,
+        "phone": "665947226",
+        "date": "19/09/2024 21:13",
+        "summary": "La señalización de emergencia parece no estar funcionando en algunos pisos.",
+        "category": "Luz",
+        "rate": 3.0,
+        "Servicio": "Reparación instalaciones eléctricas",
+        "status": "delivered"
+    },
+    {
+        "index": 33,
+        "phone": "699586449",
+        "date": "14/12/2024 14:26",
+        "summary": "Hola, parece que hay una fuga de agua en el sótano, ¿podría revisarse?",
+        "category": "Tuberias",
+        "rate": 4.0,
+        "Servicio": "Fontanería",
+        "status": "delivered"
+    },
+    {
+        "index": 34,
+        "phone": "658876469",
+        "date": "05/04/2023 06:02",
+        "summary": "Recientemente, he observado que algunas luces del pasillo del quinto piso parpadean.",
+        "category": "Luz",
+        "rate": 3.0,
+        "Servicio": "Reparación instalaciones eléctricas",
+        "status": "delivered"
+    },
+    {
+        "index": 35,
+        "phone": "609876543",
+        "date": "18/05/2023 14:39",
+        "summary": "Parece que el timbre del ascensor no suena, ¿es algo que se pueda arreglar?",
+        "category": "Ascensor",
+        "rate": 3.0,
+        "Servicio": "Reparación ascensores",
+        "status": "delivered"
+    },
+    {
+        "index": 37,
+        "phone": "699586449",
+        "date": "14/08/2023 07:52",
+        "summary": "He visto que hay ramas caídas en el jardín después de la tormenta de ayer.",
+        "category": "Suciedad",
+        "rate": 3.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 39,
+        "phone": "601157151",
+        "date": "09/11/2023 01:05",
+        "summary": "El dispensador de agua del vestíbulo parece estar averiado.",
+        "category": "Tuberías",
+        "rate": 3.0,
+        "Servicio": "Fontanería",
+        "status": "delivered"
+    },
+    {
+        "index": 41,
+        "phone": "644274139",
+        "date": "04/02/2024 18:18",
+        "summary": "El sistema de ventilación de la cocina comunitaria hace mucho ruido.",
+        "category": "Ruidos",
+        "rate": 3.0,
+        "Servicio": "Servicios de emergencia",
+        "status": "delivered"
+    },
+    {
+        "index": 42,
+        "phone": "621098765",
+        "date": "17/03/2024 02:54",
+        "summary": "El botón del tercer piso en el ascensor parece estar atascado.",
+        "category": "Ascensor",
+        "rate": 3.0,
+        "Servicio": "Reparación ascensores",
+        "status": "delivered"
+    },
+    {
+        "index": 43,
+        "phone": "659700718",
+        "date": "30/04/2024 11:31",
+        "summary": "La puerta del cuarto de basuras no cierra correctamente.",
+        "category": "Tuberias",
+        "rate": 2.0,
+        "Servicio": "Fontanería",
+        "status": "delivered"
+    },
+    {
+        "index": 44,
+        "phone": "643210987",
+        "date": "13/06/2024 20:07",
+        "summary": "Las baldosas del área de la piscina están resbaladizas, ¿podrían limpiarse?",
+        "category": "Suciedad",
+        "rate": 3.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 45,
+        "phone": "645678901",
+        "date": "26/07/2024 04:44",
+        "summary": "El sistema de riego del jardín no está cubriendo todas las áreas.",
+        "category": "Tuberías",
+        "rate": 3.0,
+        "Servicio": "Fontanería",
+        "status": "delivered"
+    },
+    {
+        "index": 46,
+        "phone": "654321098",
+        "date": "08/09/2024 13:20",
+        "summary": "La iluminación en el área de estacionamiento para bicicletas es insuficiente.",
+        "category": "Luz",
+        "rate": 3.0,
+        "Servicio": "Reparación instalaciones eléctricas",
+        "status": "delivered"
+    },
+    {
+        "index": 49,
+        "phone": "652118640",
+        "date": "15/01/2023 15:10",
+        "summary": "La puerta de acceso al techo parece estar siempre abierta.",
+        "category": "Conflicto",
+        "rate": 3.0,
+        "Servicio": "Colegio de administradores",
+        "status": "delivered"
+    },
+    {
+        "index": 50,
+        "phone": "609876543",
+        "date": "28/02/2023 23:46",
+        "summary": "El sensor de la luz en la entrada de servicio no parece funcionar bien de noche.",
+        "category": "Luz",
+        "rate": 3.0,
+        "Servicio": "Reparación instalaciones eléctricas",
+        "status": "delivered"
+    },
+    {
+        "index": 51,
+        "phone": "659700718",
+        "date": "12/04/2023 08:23",
+        "summary": "Me gustaría reportar que hay ruidos molestos por las noches provenientes del apartamento de arriba.",
+        "category": "Ruidos",
+        "rate": 3.0,
+        "Servicio": "Servicios de emergencia",
+        "status": "delivered"
+    },
+    {
+        "index": 52,
+        "phone": "644274139",
+        "date": "25/05/2023 16:59",
+        "summary": "He notado que el vecino del cuarto piso rara vez saca la basura, lo que podría ser un problema de higiene.",
+        "category": "Suciedad",
+        "rate": 2.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 53,
+        "phone": "645678901",
+        "date": "07/07/2023 01:36",
+        "summary": "Últimamente, hay un olor a humo constante que parece venir del apartamento 5B.",
+        "category": "Humedades",
+        "rate": 3.0,
+        "Servicio": "Mantenimiento áreas comunes",
+        "status": "delivered"
+    },
+    {
+        "index": 54,
+        "phone": "609876543",
+        "date": "20/08/2023 10:12",
+        "summary": "Algunos vecinos y yo estamos preocupados por las reuniones ruidosas en el apartamento 3A durante la semana.",
+        "category": "Ruidos",
+        "rate": 3.0,
+        "Servicio": "Servicios de emergencia",
+        "status": "delivered"
+    },
+    {
+        "index": 55,
+        "phone": "686767767",
+        "date": "02/10/2023 18:49",
+        "summary": "Hay mascotas en el apartamento 2D que parecen estar solas y ladrando durante largos períodos.",
+        "category": "Ruidos",
+        "rate": 3.0,
+        "Servicio": "Servicios de emergencia",
+        "status": "delivered"
+    },
+    {
+        "index": 56,
+        "phone": "634710977",
+        "date": "15/11/2023 03:25",
+        "summary": "El residente del primer piso a menudo deja su bicicleta bloqueando la entrada común.",
+        "category": "Conflicto",
+        "rate": 3.0,
+        "Servicio": "Colegio de administradores",
+        "status": "delivered"
+    },
+    {
+        "index": 57,
+        "phone": "639466485",
+        "date": "28/12/2023 12:02",
+        "summary": "Al parecer, el apartamento 7C está vertiendo agua o líquidos desde su balcón, afectando a los vecinos de abajo.",
+        "category": "Tuberías",
+        "rate": 4.0,
+        "Servicio": "Fontanería",
+        "status": "delivered"
+    },
+    {
+        "index": 58,
+        "phone": "658876469",
+        "date": "10/02/2024 20:38",
+        "summary": "Hay un constante olor a comida fuerte proveniente del apartamento 4E, lo que podría ser molesto para algunos vecinos.",
+        "category": "Olores",
+        "rate": 3.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 59,
+        "phone": "662275534",
+        "date": "23/03/2024 05:15",
+        "summary": "El residente del apartamento 1A parece tener un volumen de televisión muy alto por las noches.",
+        "category": "Ruidos",
+        "rate": 3.0,
+        "Servicio": "Servicios de emergencia",
+        "status": "delivered"
+    },
+    {
+        "index": 60,
+        "phone": "658876469",
+        "date": "05/05/2024 13:51",
+        "summary": "Me preocupa que los niños del apartamento 8B jueguen en las escaleras, lo que podría ser peligroso.",
+        "category": "Conflicto",
+        "rate": 3.0,
+        "Servicio": "Colegio de administradores",
+        "status": "delivered"
+    },
+    {
+        "index": 61,
+        "phone": "644274139",
+        "date": "18/06/2024 22:28",
+        "summary": "El ascensor del tercer piso está averiado. ¿Podría programarse una reparación?",
+        "category": "Ascensor",
+        "rate": 4.0,
+        "Servicio": "Reparación ascensores",
+        "status": "delivered"
+    },
+    {
+        "index": 62,
+        "phone": "645678901",
+        "date": "01/08/2024 07:04",
+        "summary": "Se perciben ruidos inusuales en el ascensor. Solicitamos revisión y solución.",
+        "category": "Ascensor",
+        "rate": 4.0,
+        "Servicio": "Reparación ascensores",
+        "status": "delivered"
+    },
+    {
+        "index": 63,
+        "phone": "699586449",
+        "date": "14/09/2024 15:41",
+        "summary": "Hemos detectado agua en el pasillo del cuarto piso. ¿Podría atenderse esta situación?",
+        "category": "Tuberias",
+        "rate": 5.0,
+        "Servicio": "Fontanería",
+        "status": "delivered"
+    },
+    {
+        "index": 64,
+        "phone": "651588027",
+        "date": "27/10/2024 00:17",
+        "summary": "En el sótano, hay una tubería rota que necesita reparación urgente.",
+        "category": "Tuberias",
+        "rate": 5.0,
+        "Servicio": "Fontanería",
+        "status": "delivered"
+    },
+    {
+        "index": 65,
+        "phone": "676789012",
+        "date": "09/12/2024 08:54",
+        "summary": "En el sexto piso, hay una gotera en el techo. ¿Podría abordarse pronto?",
+        "category": "Goteras",
+        "rate": 4.0,
+        "Servicio": "Reparación instalaciones eléctricas",
+        "status": "delivered"
+    },
+    {
+        "index": 66,
+        "phone": "676789012",
+        "date": "22/01/2023 17:30",
+        "summary": "En el garaje, observamos humedad en las paredes. ¿Podría evaluarse y repararse?",
+        "category": "Humedades",
+        "rate": 3.0,
+        "Servicio": "Mantenimiento áreas comunes",
+        "status": "delivered"
+    },
+    {
+        "index": 67,
+        "phone": "678901234",
+        "date": "04/03/2023 02:06",
+        "summary": "Se han notado grietas en un pilar. ¿Sería posible una inspección estructural?",
+        "category": "Grietas",
+        "rate": 3.0,
+        "Servicio": "Pintura y reparación de paredes",
+        "status": "delivered"
+    },
+    {
+        "index": 68,
+        "phone": "602316000",
+        "date": "17/04/2023 10:43",
+        "summary": "La fachada del primer piso presenta grietas. ¿Podría evaluarse y repararse?",
+        "category": "Grietas",
+        "rate": 4.0,
+        "Servicio": "Pintura y reparación de paredes",
+        "status": "delivered"
+    },
+    {
+        "index": 69,
+        "phone": "686767767",
+        "date": "30/05/2023 19:19",
+        "summary": "El suelo del vestíbulo necesita limpieza. ¿Podría organizarse la limpieza?",
+        "category": "Suciedad",
+        "rate": 2.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 70,
+        "phone": "633562949",
+        "date": "12/07/2023 03:56",
+        "summary": "En el portal, hay basura acumulada. ¿Se podría implementar un programa de limpieza?",
+        "category": "Suciedad",
+        "rate": 2.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 72,
+        "phone": "665947226",
+        "date": "07/10/2023 21:09",
+        "summary": "La luz del pasillo en el cuarto piso no funciona. ¿Podría solucionarse rápidamente?",
+        "category": "Luz",
+        "rate": 4.0,
+        "Servicio": "Reparación instalaciones eléctricas",
+        "status": "delivered"
+    },
+    {
+        "index": 73,
+        "phone": "665947226",
+        "date": "20/11/2023 05:45",
+        "summary": "El vecino del tercer piso parece realizar reparaciones ruidosas en horas inadecuadas.",
+        "category": "Ruidos",
+        "rate": 4.0,
+        "Servicio": "Servicios de emergencia",
+        "status": "delivered"
+    },
+    {
+        "index": 74,
+        "phone": "613212838",
+        "date": "02/01/2024 14:22",
+        "summary": "Hay un vehículo estacionado permanentemente en dos espacios del garaje, lo que limita el espacio para los demás.",
+        "category": "Conflicto",
+        "rate": 4.0,
+        "Servicio": "Colegio de administradores",
+        "status": "delivered"
+    },
+    {
+        "index": 75,
+        "phone": "659700718",
+        "date": "15/02/2024 22:58",
+        "summary": "El residente de la planta baja a menudo deja su ropa colgada en espacios comunes.",
+        "category": "Suciedad",
+        "rate": 3.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 76,
+        "phone": "613212838",
+        "date": "29/03/2024 07:35",
+        "summary": "El apartamento 9F parece acumular mucha basura en su balcón, lo que es una vista desagradable.",
+        "category": "Suciedad",
+        "rate": 3.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 77,
+        "phone": "678901234",
+        "date": "11/05/2024 16:11",
+        "summary": "Me he percatado de que el vecino de enfrente suele dejar su puerta abierta, lo que podría ser un riesgo de seguridad.",
+        "category": "Conflicto",
+        "rate": 3.0,
+        "Servicio": "Colegio de administradores",
+        "status": "delivered"
+    },
+    {
+        "index": 78,
+        "phone": "659700718",
+        "date": "24/06/2024 00:48",
+        "summary": "El residente del 10A parece usar el gimnasio comunitario en horas muy tardías, causando ruido.",
+        "category": "Ruidos",
+        "rate": 3.0,
+        "Servicio": "Servicios de emergencia",
+        "status": "delivered"
+    },
+    {
+        "index": 79,
+        "phone": "676789012",
+        "date": "06/08/2024 09:24",
+        "summary": "Algunos vecinos han comentado sobre el uso excesivo de perfumes fuertes en el ascensor por parte de un residente.",
+        "category": "Ascensor",
+        "rate": 2.0,
+        "Servicio": "Reparación ascensores",
+        "status": "delivered"
+    },
+    {
+        "index": 80,
+        "phone": "654321098",
+        "date": "19/09/2024 18:01",
+        "summary": "El apartamento de la esquina frecuentemente deja sus objetos personales en el área común, obstruyendo el paso.",
+        "category": "Suciedad",
+        "rate": 3.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 81,
+        "phone": "651588027",
+        "date": "01/11/2024 02:37",
+        "summary": "Hay preocupación por un residente que parece alimentar a animales salvajes cerca del área de juegos para niños.",
+        "category": "Conflicto",
+        "rate": 3.0,
+        "Servicio": "Colegio de administradores",
+        "status": "delivered"
+    },
+    {
+        "index": 82,
+        "phone": "668926928",
+        "date": "14/12/2024 11:14",
+        "summary": "Quisiera informar que el apartamento 2C frecuentemente deja su música alta hasta altas horas de la noche.",
+        "category": "Ruidos",
+        "rate": 3.0,
+        "Servicio": "Servicios de emergencia",
+        "status": "delivered"
+    },
+    {
+        "index": 83,
+        "phone": "613212838",
+        "date": "23/03/2024 05:15",
+        "summary": "Me he percatado de que el vecino del quinto piso deja regularmente sus objetos en el pasillo, obstruyendo el paso.",
+        "category": "Suciedad",
+        "rate": 3.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 84,
+        "phone": "609876543",
+        "date": "27/02/2024 09:29",
+        "summary": "He notado que el apartamento 6A tiende a cocinar con olores muy fuertes que se esparcen por el edificio.",
+        "category": "Olores",
+        "rate": 3.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 85,
+        "phone": "612345678",
+        "date": "16/04/2023 13:54",
+        "summary": "El residente del piso 3B parece tener visitas ruidosas durante los fines de semana.",
+        "category": "Ruidos",
+        "rate": 3.0,
+        "Servicio": "Servicios de emergencia",
+        "status": "delivered"
+    },
+    {
+        "index": 86,
+        "phone": "662275534",
+        "date": "12/01/2024 10:19",
+        "summary": "Hay un coche desconocido que constantemente ocupa el espacio de estacionamiento asignado a mi apartamento.",
+        "category": "Conflicto",
+        "rate": 3.0,
+        "Servicio": "Colegio de administradores",
+        "status": "delivered"
+    },
+    {
+        "index": 87,
+        "phone": "609876543",
+        "date": "01/07/2023 23:15",
+        "summary": "El vecino de abajo fuma en su balcón y el humo sube directamente a nuestro apartamento.",
+        "category": "Conflicto",
+        "rate": 3.0,
+        "Servicio": "Colegio de administradores",
+        "status": "delivered"
+    },
+    {
+        "index": 88,
+        "phone": "678901234",
+        "date": "15/11/2024 12:07",
+        "summary": "El apartamento 8D parece tener un perro que ladra continuamente cuando están fuera.",
+        "category": "Ruidos",
+        "rate": 3.0,
+        "Servicio": "Servicios de emergencia",
+        "status": "delivered"
+    },
+    {
+        "index": 89,
+        "phone": "638489963",
+        "date": "28/04/2023 21:37",
+        "summary": "El residente del 7C suele realizar ejercicios ruidosos en su apartamento temprano en la mañana.",
+        "category": "Ruidos",
+        "rate": 3.0,
+        "Servicio": "Servicios de emergencia",
+        "status": "delivered"
+    },
+    {
+        "index": 90,
+        "phone": "680749708",
+        "date": "16/05/2023 08:21",
+        "summary": "He observado que el apartamento 1E deja su basura fuera de su puerta durante días.",
+        "category": "Suciedad",
+        "rate": 3.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 91,
+        "phone": "678901234",
+        "date": "22/06/2023 17:43",
+        "summary": "El vecino del segundo piso juega instrumentos musicales a un volumen alto durante la tarde.",
+        "category": "Ruidos",
+        "rate": 3.0,
+        "Servicio": "Servicios de emergencia",
+        "status": "delivered"
+    },
+    {
+        "index": 92,
+        "phone": "654321098",
+        "date": "07/08/2023 10:09",
+        "summary": "Algunos residentes hemos notado que el apartamento 9G deja constantemente sus juguetes y equipos deportivos en el jardín.",
+        "category": "Suciedad",
+        "rate": 3.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 93,
+        "phone": "662275534",
+        "date": "11/09/2023 22:36",
+        "summary": "El residente del 10B parece usar el salón comunitario para sus reuniones privadas, dejándolo desordenado.",
+        "category": "Suciedad",
+        "rate": 3.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 94,
+        "phone": "638489963",
+        "date": "02/10/2023 15:17",
+        "summary": "Me he dado cuenta de que hay un constante flujo de gente entrando y saliendo del apartamento 3C durante la noche.",
+        "category": "Conflicto",
+        "rate": 3.0,
+        "Servicio": "Colegio de administradores",
+        "status": "delivered"
+    },
+    {
+        "index": 95,
+        "phone": "652118640",
+        "date": "28/11/2023 09:48",
+        "summary": "El vecino de enfrente tiene una serie de plantas en el pasillo que dificultan el paso.",
+        "category": "Suciedad",
+        "rate": 2.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 96,
+        "phone": "652118640",
+        "date": "15/12/2023 20:54",
+        "summary": "El apartamento 5E parece acumular periódicos y revistas viejas en su puerta, creando un aspecto desordenado.",
+        "category": "Suciedad",
+        "rate": 2.0,
+        "Servicio": "Servicios de limpieza",
+        "status": "delivered"
+    },
+    {
+        "index": 97,
+        "phone": "668926928",
+        "date": "09/01/2024 14:27",
+        "summary": "He notado que el vecino del primer piso a menudo usa la terraza comunitaria para almacenar objetos personales.",
+        "category": "Conflicto",
+        "rate": 3.0,
+        "Servicio": "Colegio de administradores",
+        "status": "delivered"
+    },
+    {
+        "index": 98,
+        "phone": "612592936",
+        "date": "01/02/2024 11:35",
+        "summary": "El residente del 6B parece realizar trabajos de construcción en su apartamento en horarios no permitidos.",
+        "category": "Ruidos",
+        "rate": 3.0,
+        "Servicio": "Servicios de emergencia",
+        "status": "delivered"
+    },
+    {
+        "index": 99,
+        "phone": "633562949",
+        "date": "04/03/2024 18:42",
+        "summary": "El apartamento 4A tiene varias luces exteriores que iluminan de manera excesiva y molestan durante la noche.",
+        "category": "Luz",
+        "rate": 3.0,
+        "Servicio": "Reparación instalaciones eléctricas",
+        "status": "delivered"
+    }

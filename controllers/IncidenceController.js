@@ -10,8 +10,8 @@ const incidenceDataPath = path.join(__dirname, '../data/incidenceData.json')
 
 const fetchMessages = async () => {
   try {
-    // Read data from incidenceData.json
     const data = await fs.readFile(incidenceDataPath, 'utf-8');
+    console.log("Read data from incidenceData.json", data)
     return JSON.parse(data);
   } catch (error) {
     console.error('Error in fetchMessages:', error);
@@ -21,16 +21,17 @@ const fetchMessages = async () => {
 
 const updateMessageState = async (messageId, newState) => {
   try {
-    // Assuming you have a function to find and update the state of a message in the data file
     const messages = await fetchMessages();
+    console.log("Assuming you have a function to find and update the state of a message in the data file: ", messages)
+    // console.log(messages)
     const updatedMessages = messages.map((message) => {
       if (message.id === messageId) {
-        return { ...message, state: newState };
+        return { ...message, status: newState };
       }
       return message;
     });
 
-    // Update the data file with the modified messages
+    console.log("Update the data file with the modified messages")
     await fs.writeFile(incidenceDataPath, JSON.stringify(updatedMessages, null, 2), 'utf-8');
   } catch (error) {
     console.error('Error in updateMessageState:', error);
@@ -41,26 +42,23 @@ const updateMessageState = async (messageId, newState) => {
 const transformMessageToIncidence = (message) => ({
   summary: message.summary,
   category: message.category,
-  originalMessage: message.originalMessage,
+  originalMessage: message.summary,
   status: 'received', // Set the status to "received" or any other desired value
-  doorIds: message.doorIds,
-  buildingId: message.buildingId,
-  ownerIds: message.ownerIds,
 });
 
 const IncidenceController = {
-  async fetchAndCreateIncidences() {
+  async fetchAndCreateIncidences(req, res, next) {
     try {
-      // Fetch messages from wherever you are getting them
       const messages = await fetchMessages();
+      console.log(" Fetch messages from wherever you are getting them", messages)
 
       if (messages.length === 0) {
         console.log("No messages to process");
         return [];
       }
 
-      // Filter messages based on some criteria (e.g., state is "previous to received")
-      const filteredMessages = messages.filter((message) => message.state === "delivered");
+      const filteredMessages = messages.filter((message) => message.status === "delivered");
+      console.log("Filter messages based on some criteria (e.g., state is previous to received)", filteredMessages)
       const createdIncidences = [];
 
       for (const message of filteredMessages) {
@@ -69,12 +67,43 @@ const IncidenceController = {
         await updateMessageState(message.id, 'received');
         createdIncidences.push(incidence);
       }
-
-      return createdIncidences;
+      console.log(createdIncidences)
+      res.status(201).send({ message: "Manual incidence created successfully", createdIncidences })
     } catch (error) {
       console.error("Error in fetchAndCreateIncidences:", error);
-      throw error;
+      next(error);
     }
+
+    //   console.log("Fetching messages...");
+    //   const data = await fs.readFile(incidenceDataPath, 'utf-8');
+    //   const messages = JSON.parse(data);
+
+    //   if (messages.length === 0) {
+    //     console.log("No messages to process");
+    //     return [];
+    //   }
+
+    //   const createdIncidences = [];
+
+    //   for (const message of messages) {
+    //     const incidenceData = {
+    //       summary: message.Incidencia,
+    //       category: message.Categoría,
+    //       originalMessage: message.Incidencia,
+    //       status: message.EstadoIncidencia,
+    //     };
+
+    //     const incidence = await Incidence.create(incidenceData);
+    //     createdIncidences.push(incidence);
+    //   }
+
+    //   console.log(`${createdIncidences.length} incidences created`);
+    //   console.log(createdIncidences);
+    //   return createdIncidences;
+    // } catch (error) {
+    //   console.error('Error in fetchAndCreateIncidences:', error);
+    //   throw error;
+    // }
   },
 
   async createManualIncidence(req, res) {

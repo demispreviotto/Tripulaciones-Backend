@@ -5,7 +5,7 @@ const IncidenceController = require("../controllers/IncidenceController");
 const { authentication } = require("../middleware/authentication");
 
 // router.post("/createIncidence", authentication, IncidenceController.createIncidence);
-router.post("/fetchAndCreateIncidences", authentication, IncidenceController.fetchAndCreateIncidences);
+router.post("/fetchAndCreateIncidences", IncidenceController.fetchAndCreateIncidences);
 router.post("/createManualIncidence", authentication, IncidenceController.createManualIncidence);
 router.get("/getAllIncidences", IncidenceController.getAllIncidences);
 router.get("/getIncidenceById/:id", IncidenceController.getIncidenceById);
