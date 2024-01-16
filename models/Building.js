@@ -5,29 +5,30 @@ const BuildingSchema = new mongoose.Schema(
   {
     address: {
       type: String,
-      required: [true, "Please enter the address of the building"],
+      required: [true, "Por favor inserte la dirección de la finca"],
     },
     number: {
       type: Number,
-      required: [true, "Please enter the address number"],
+      required: [true, "Por favor inserte el número de la dirección"],
     },
     zipCode: {
       type: Number,
-      required: [true, "Please enter the zip code"],
+      required: [true, "Por favor inserte el código postal"],
     },
     city: {
       type: String,
-      required: [true, "Please enter the city"],
+      required: [true, "Por favor inserte la ciudad"],
     },
     province: {
       type: String,
-      required: [true, "Please enter the province"],
+      required: [true, "Por favor inserte la comunidad"],
     },
     createdBy: [{ type: ObjectId, ref: "User" }],
     serviceIds: [{ type: ObjectId, ref: "Service" }],
     doorIds: [{ type: ObjectId, ref: "Door" }],
     incidenceIds: [{ type: ObjectId, ref: "Incidence" }],
     todoIds: [{ type: ObjectId, ref: "Todo" }],
+    ownerIds: [{ type: ObjectId, ref: "Owner" }],
   },
   { timestamps: true }
 );

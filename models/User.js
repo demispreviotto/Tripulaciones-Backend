@@ -5,25 +5,25 @@ const UserSchema = new mongoose.Schema(
   {
     firstName: {
       type: String,
-      required: [true, "Please enter your name"],
+      required: [true, "Por favor inserte su nombre"],
     },
     lastName: {
       type: String,
-      required: [true, "Please enter your last name"],
+      required: [true, "Por favor inserte su apellido"],
     },
     email: {
       type: String,
-      required: [true, "Please enter your email"],
+      required: [true, "Por favor inserte su correo"],
       unique: true,
       trim: true,
     },
     phone: {
       type: Number,
-      required: [true, "Please enter your phone number"],
+      required: [true, "Por favor inserte su número de teléfono"],
     },
     password: {
       type: String,
-      required: [true, "Please enter your password"],
+      required: [true, "Por favor inserte su contraseña"],
     },
     role: {
       type: String,

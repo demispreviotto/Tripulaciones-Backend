@@ -15,7 +15,7 @@ const UserController = {
         ...req.body,
         password: hash,
       });
-      res.status(201).send({ message: "User created successfully", user });
+      res.status(201).send({ message: "Usuario creado exitosamente", user });
     } catch (error) {
       next(error);
     }
@@ -26,24 +26,26 @@ const UserController = {
       if (!email || !password) {
         return res
           .status(400)
-          .send({ message: "Please enter email and password" });
+          .send({ message: "Por favor inserte el correo y la contraseña" });
       }
-      const user = await User.findOne({ email: req.body.email })
-        .populate(
-          {
-            path: "buildingIds",
-            select: "address number",
-            populate: {
-              path: "doorIds",
-              select: "incidenceIds"
-            }
-          })
+      const user = await User.findOne({ email: req.body.email }).populate({
+        path: "buildingIds",
+        select: "address number",
+        populate: {
+          path: "doorIds",
+          select: "incidenceIds",
+        },
+      });
       if (!user) {
-        return res.status(400).send({ message: "Incorrect email or password" });
+        return res
+          .status(400)
+          .send({ message: "Contraseña y/o correo incorrectos" });
       }
       const isMatch = await bcrypt.compare(req.body.password, user.password);
       if (!isMatch) {
-        return res.status(400).send({ message: "Incorrect email or password" });
+        return res
+          .status(400)
+          .send({ message: "Contraseña y/o correo incorrectos" });
       }
       const token = jwt.sign({ _id: user._id }, jwt_secret);
       if (user.tokens.length > 4) user.tokens.shift();
@@ -51,10 +53,10 @@ const UserController = {
       await user.save();
       return res
         .status(200)
-        .send({ message: `Welcome ${user.firstName}`, token, user });
+        .send({ message: `Bienvenid@, ${user.firstName}`, token, user });
     } catch (error) {
       console.error(error);
-      res.status(500).send({ message: "Unexpected error in the login" });
+      res.status(500).send({ message: "Error al inciar sesión" });
     }
   },
   async getAll(req, res) {
@@ -63,18 +65,16 @@ const UserController = {
       res.send(users);
     } catch (error) {
       console.error(error);
-      res
-        .status(500)
-        .send({ message: "Unexpected error looking for the users" });
+      res.status(500).send({ message: "Error en la búsqueda de los usuarios" });
     }
   },
   async deleteOne(req, res) {
     try {
       await User.findByIdAndDelete(req.user._id);
-      res.send({ message: "User deleted successfully" });
+      res.send({ message: "Usuario eliminado exitosamente" });
     } catch (error) {
       console.error(error);
-      res.status(500).send({ message: "Unexpected error deleting the user" });
+      res.status(500).send({ message: "Error al eliminar al usuario" });
     }
   },
   async logout(req, res) {
@@ -82,10 +82,10 @@ const UserController = {
       const user = await User.findByIdAndUpdate(req.user._id, {
         $pull: { tokens: req.headers.authorization },
       });
-      res.send({ message: `See you soon ${user.firstName}` });
+      res.send({ message: `Vuelve pronto, ${user.firstName}` });
     } catch (error) {
       console.error(error);
-      res.status(500).send({ message: "Unexpected error in the logout" });
+      res.status(500).send({ message: "Error al cerrar sesión" });
     }
   },
   async getLoggedUser(req, res) {
@@ -95,9 +95,7 @@ const UserController = {
       res.status(200).send(user);
     } catch (error) {
       console.log(error);
-      res
-        .status(500)
-        .send({ message: "Error while trying to get the current user" });
+      res.status(500).send({ message: "Error en la búsqueda del usuario" });
     }
   },
   async update(req, res) {
@@ -105,10 +103,10 @@ const UserController = {
       const user = await User.findByIdAndUpdate(req.user._id, req.body, {
         new: true,
       });
-      res.send({ message: "User updated successfully", user });
+      res.send({ message: "Usuario modificado exitosamente", user });
     } catch (error) {
       console.error(error);
-      res.status(500).send({ message: "Unexpected error updating the user" });
+      res.status(500).send({ message: "Error al modificar al usuario" });
     }
   },
 };
