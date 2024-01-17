@@ -11,6 +11,10 @@ const BuildingSchema = new mongoose.Schema(
       type: Number,
       required: [true, "Por favor inserte el número de la dirección"],
     },
+    cru: {
+      type: Number,
+      required: [true, "Por favor inserte el número de el IDUFIR O CRU"],
+    },
     zipCode: {
       type: Number,
       required: [true, "Por favor inserte el código postal"],
