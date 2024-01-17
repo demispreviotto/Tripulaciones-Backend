@@ -73,37 +73,6 @@ const IncidenceController = {
       console.error("Error in fetchAndCreateIncidences:", error);
       next(error);
     }
-
-    //   console.log("Fetching messages...");
-    //   const data = await fs.readFile(incidenceDataPath, 'utf-8');
-    //   const messages = JSON.parse(data);
-
-    //   if (messages.length === 0) {
-    //     console.log("No messages to process");
-    //     return [];
-    //   }
-
-    //   const createdIncidences = [];
-
-    //   for (const message of messages) {
-    //     const incidenceData = {
-    //       summary: message.Incidencia,
-    //       category: message.Categoría,
-    //       originalMessage: message.Incidencia,
-    //       status: message.EstadoIncidencia,
-    //     };
-
-    //     const incidence = await Incidence.create(incidenceData);
-    //     createdIncidences.push(incidence);
-    //   }
-
-    //   console.log(`${createdIncidences.length} incidences created`);
-    //   console.log(createdIncidences);
-    //   return createdIncidences;
-    // } catch (error) {
-    //   console.error('Error in fetchAndCreateIncidences:', error);
-    //   throw error;
-    // }
   },
 
   async createManualIncidence(req, res) {
