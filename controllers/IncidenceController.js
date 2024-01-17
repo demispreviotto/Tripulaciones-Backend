@@ -62,6 +62,13 @@ const IncidenceController = {
         const incidence = await Incidence.create(incidenceData);
         await updateMessageState(message.id, "received");
         createdIncidences.push(incidence);
+        if (owner) {
+          incidence.ownerIds.push(owner._id);
+          await incidence.save();
+          owner.incidenceIds.push(incidence._id);
+          await owner.save();
+        }
+        const owner = await Owner.findOne({ phone: message.phone });
       }
       res
         .status(201)
@@ -156,6 +163,20 @@ const IncidenceController = {
         .send({ message: "Error en la búsqueda de la incidencia" });
     }
   },
+  async getIncidencesByBuilding(req, res) {
+    try {
+      const buildingId = req.params.buildingId;
+      const building = await Building.findById(buildingId);
+      if (!building) {
+        return res.status(404).send({ message: "Finca no encontrada" });
+      }
+      const incidences = await Incidence.find({ _id: { $in: building.incidenceIds } });
+      res.send(incidences);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send({ message: "Error obteniendo incidencias por finca" });
+    }
+  },
   async updateIncidence(req, res) {
     try {
       const incidence = await Incidence.findByIdAndUpdate(
@@ -193,6 +214,9 @@ const IncidenceController = {
   async deleteAll(req, res) {
     try {
       await Incidence.deleteMany();
+      await Door.updateMany({}, { $set: { incidenceIds: [] } });
+      await Building.updateMany({}, { $set: { incidenceIds: [] } });
+      await Owner.updateMany({}, { $set: { incidenceIds: [] } });
       res.send({ message: "Incidencias eliminadas exitosamente" });
     } catch (error) {
       console.error(error);

@@ -1,0 +1,902 @@
+[
+    {
+        "index": 0,
+        "ID proveedor": 1,
+        "Nombre proveedor": "S.A. Pintores Galván",
+        "Teléfono": "686733799",
+        "Servicio": "Pintura y reparación de paredes",
+        "Localidad": "Valencia",
+        "Valoración media": 1.50814106501101
+    },
+    {
+        "index": 1,
+        "ID proveedor": 2,
+        "Nombre proveedor": "S.Com. Fontaneros Villena",
+        "Teléfono": "654038870",
+        "Servicio": "Fontanería",
+        "Localidad": "Valencia",
+        "Valoración media": 3.2857431066341336
+    },
+    {
+        "index": 2,
+        "ID proveedor": 3,
+        "Nombre proveedor": "S.C.P Mantenimiento Ruiz",
+        "Teléfono": "676425543",
+        "Servicio": "Mantenimiento calefacción y aire acondicionado",
+        "Localidad": "Valencia",
+        "Valoración media": 1.7656854036927805
+    },
+    {
+        "index": 3,
+        "ID proveedor": 4,
+        "Nombre proveedor": "S.L. Piscinas Castells",
+        "Teléfono": "638266961",
+        "Servicio": "Limpieza y mantenimiento de piscinas",
+        "Localidad": "Valencia",
+        "Valoración media": 4.91216679727861
+    },
+    {
+        "index": 4,
+        "ID proveedor": 5,
+        "Nombre proveedor": "S.L.N.E Mantenimiento Alcázar",
+        "Teléfono": "669959813",
+        "Servicio": "Mantenimiento calefacción y aire acondicionado",
+        "Localidad": "Valencia",
+        "Valoración media": 3.4881581930190895
+    },
+    {
+        "index": 5,
+        "ID proveedor": 6,
+        "Nombre proveedor": "S.L.N.E Mantenimiento Bas",
+        "Teléfono": "673082597",
+        "Servicio": "Reparación ascensores",
+        "Localidad": "Valencia",
+        "Valoración media": 1.3482572210313437
+    },
+    {
+        "index": 6,
+        "ID proveedor": 7,
+        "Nombre proveedor": "S.A.D Mantenimiento Yáñez",
+        "Teléfono": "620568619",
+        "Servicio": "Mantenimiento áreas comunes",
+        "Localidad": "Valencia",
+        "Valoración media": 2.4963029342115615
+    },
+    {
+        "index": 7,
+        "ID proveedor": 8,
+        "Nombre proveedor": "S.A. Mantenimiento Martin",
+        "Teléfono": "676825258",
+        "Servicio": "Reparación ascensores",
+        "Localidad": "Valencia",
+        "Valoración media": 3.0580445009190202
+    },
+    {
+        "index": 8,
+        "ID proveedor": 9,
+        "Nombre proveedor": "S.L.N.E Pintores Díaz",
+        "Teléfono": "663932457",
+        "Servicio": "Pintura y reparación de paredes",
+        "Localidad": "Valencia",
+        "Valoración media": 3.002420902249033
+    },
+    {
+        "index": 9,
+        "ID proveedor": 10,
+        "Nombre proveedor": "S.Coop. Electricistas Bru",
+        "Teléfono": "619979642",
+        "Servicio": "Reparación instalaciones eléctricas",
+        "Localidad": "Valencia",
+        "Valoración media": 1.683872888406654
+    },
+    {
+        "index": 10,
+        "ID proveedor": 11,
+        "Nombre proveedor": "S.L.N.E Mantenimiento Piquer",
+        "Teléfono": "636508754",
+        "Servicio": "Mantenimiento áreas comunes",
+        "Localidad": "Valencia",
+        "Valoración media": 3.8286869352773847
+    },
+    {
+        "index": 11,
+        "ID proveedor": 12,
+        "Nombre proveedor": "S.Coop. Plagas Morán",
+        "Teléfono": "662491740",
+        "Servicio": "Control de plagas",
+        "Localidad": "Valencia",
+        "Valoración media": 3.0009508292027407
+    },
+    {
+        "index": 12,
+        "ID proveedor": 13,
+        "Nombre proveedor": "S.Coop. Gestión de Residuos Villalonga",
+        "Teléfono": "618211327",
+        "Servicio": "Gestión de residuos",
+        "Localidad": "Valencia",
+        "Valoración media": 3.2077812417291036
+    },
+    {
+        "index": 13,
+        "ID proveedor": 14,
+        "Nombre proveedor": "S.L.L. Piscinas Caballero",
+        "Teléfono": "630321196",
+        "Servicio": "Limpieza y mantenimiento de piscinas",
+        "Localidad": "Valencia",
+        "Valoración media": 1.0068160418646666
+    },
+    {
+        "index": 14,
+        "ID proveedor": 15,
+        "Nombre proveedor": "S.L.U. Gestión de Residuos Verdejo",
+        "Teléfono": "656088341",
+        "Servicio": "Gestión de residuos",
+        "Localidad": "Valencia",
+        "Valoración media": 4.987323978545866
+    },
+    {
+        "index": 15,
+        "ID proveedor": 16,
+        "Nombre proveedor": "S.Coop. Mantenimiento Pagès",
+        "Teléfono": "645677516",
+        "Servicio": "Reparación ascensores",
+        "Localidad": "Valencia",
+        "Valoración media": 4.7623138349231375
+    },
+    {
+        "index": 16,
+        "ID proveedor": 17,
+        "Nombre proveedor": "S.Com. Piscinas Canales",
+        "Teléfono": "668729541",
+        "Servicio": "Limpieza y mantenimiento de piscinas",
+        "Localidad": "Valencia",
+        "Valoración media": 2.8819643142031914
+    },
+    {
+        "index": 17,
+        "ID proveedor": 18,
+        "Nombre proveedor": "S.Coop. Limpieza Jover",
+        "Teléfono": "620339540",
+        "Servicio": "Servicios de limpieza",
+        "Localidad": "Valencia",
+        "Valoración media": 2.1805855723972867
+    },
+    {
+        "index": 18,
+        "ID proveedor": 19,
+        "Nombre proveedor": "S.C.P Mantenimiento Ángel",
+        "Teléfono": "644930035",
+        "Servicio": "Mantenimiento calefacción y aire acondicionado",
+        "Localidad": "Valencia",
+        "Valoración media": 4.6469686242329935
+    },
+    {
+        "index": 19,
+        "ID proveedor": 20,
+        "Nombre proveedor": "S.L. Electricistas Peña",
+        "Teléfono": "666436481",
+        "Servicio": "Reparación instalaciones eléctricas",
+        "Localidad": "Valencia",
+        "Valoración media": 3.6513784756217635
+    },
+    {
+        "index": 20,
+        "ID proveedor": 21,
+        "Nombre proveedor": "S.C.P Piscinas Contreras",
+        "Teléfono": "620040432",
+        "Servicio": "Limpieza y mantenimiento de piscinas",
+        "Localidad": "Valencia",
+        "Valoración media": 2.035974270650626
+    },
+    {
+        "index": 21,
+        "ID proveedor": 22,
+        "Nombre proveedor": "S.Com. Pintores Vera",
+        "Teléfono": "635321252",
+        "Servicio": "Pintura y reparación de paredes",
+        "Localidad": "Valencia",
+        "Valoración media": 3.9784286670260767
+    },
+    {
+        "index": 22,
+        "ID proveedor": 23,
+        "Nombre proveedor": "S.L.L. Mantenimiento Rosado",
+        "Teléfono": "624025350",
+        "Servicio": "Mantenimiento áreas comunes",
+        "Localidad": "Valencia",
+        "Valoración media": 1.6758257754307597
+    },
+    {
+        "index": 23,
+        "ID proveedor": 24,
+        "Nombre proveedor": "S.Com. Emergencia Adadia",
+        "Teléfono": "649562242",
+        "Servicio": "Servicios de emergencia",
+        "Localidad": "Valencia",
+        "Valoración media": 1.156132638785905
+    },
+    {
+        "index": 24,
+        "ID proveedor": 25,
+        "Nombre proveedor": "S.Coop. Electricistas Lobato",
+        "Teléfono": "676939966",
+        "Servicio": "Reparación instalaciones eléctricas",
+        "Localidad": "Valencia",
+        "Valoración media": 1.0504755150596603
+    },
+    {
+        "index": 25,
+        "ID proveedor": 26,
+        "Nombre proveedor": "S.L.N.E Fontaneros Torres",
+        "Teléfono": "688737264",
+        "Servicio": "Fontanería",
+        "Localidad": "Valencia",
+        "Valoración media": 2.088757652837725
+    },
+    {
+        "index": 26,
+        "ID proveedor": 27,
+        "Nombre proveedor": "S.L. Electricistas Planas",
+        "Teléfono": "649325142",
+        "Servicio": "Reparación instalaciones eléctricas",
+        "Localidad": "Valencia",
+        "Valoración media": 2.9051389197599415
+    },
+    {
+        "index": 27,
+        "ID proveedor": 28,
+        "Nombre proveedor": "S.L. Gestión de Residuos Maldonado",
+        "Teléfono": "631422309",
+        "Servicio": "Gestión de residuos",
+        "Localidad": "Valencia",
+        "Valoración media": 2.3135610171905507
+    },
+    {
+        "index": 28,
+        "ID proveedor": 29,
+        "Nombre proveedor": "S.L.N.E Piscinas Fuentes",
+        "Teléfono": "641472381",
+        "Servicio": "Limpieza y mantenimiento de piscinas",
+        "Localidad": "Valencia",
+        "Valoración media": 4.95782914616394
+    },
+    {
+        "index": 29,
+        "ID proveedor": 30,
+        "Nombre proveedor": "S.A.T. Emergencia Robledo",
+        "Teléfono": "647422526",
+        "Servicio": "Servicios de emergencia",
+        "Localidad": "Valencia",
+        "Valoración media": 2.865631496883
+    },
+    {
+        "index": 30,
+        "ID proveedor": 31,
+        "Nombre proveedor": "S.Coop. Gestión de Residuos Cerdá",
+        "Teléfono": "643041132",
+        "Servicio": "Gestión de residuos",
+        "Localidad": "Valencia",
+        "Valoración media": 1.6116746690500579
+    },
+    {
+        "index": 31,
+        "ID proveedor": 32,
+        "Nombre proveedor": "S.A. Fontaneros Aroca",
+        "Teléfono": "682959491",
+        "Servicio": "Fontanería",
+        "Localidad": "Valencia",
+        "Valoración media": 3.1396152052187842
+    },
+    {
+        "index": 32,
+        "ID proveedor": 33,
+        "Nombre proveedor": "S.Com. Pintores Soto",
+        "Teléfono": "692662530",
+        "Servicio": "Pintura y reparación de paredes",
+        "Localidad": "Valencia",
+        "Valoración media": 4.838105280821971
+    },
+    {
+        "index": 33,
+        "ID proveedor": 34,
+        "Nombre proveedor": "S.L. Electricistas Pedrosa",
+        "Teléfono": "655137471",
+        "Servicio": "Reparación instalaciones eléctricas",
+        "Localidad": "Valencia",
+        "Valoración media": 1.7712215743630093
+    },
+    {
+        "index": 34,
+        "ID proveedor": 35,
+        "Nombre proveedor": "S.A.T. Mantenimiento Zurita",
+        "Teléfono": "682488855",
+        "Servicio": "Reparación ascensores",
+        "Localidad": "Valencia",
+        "Valoración media": 1.709363883912769
+    },
+    {
+        "index": 35,
+        "ID proveedor": 36,
+        "Nombre proveedor": "S.A. Piscinas Alsina",
+        "Teléfono": "693890304",
+        "Servicio": "Limpieza y mantenimiento de piscinas",
+        "Localidad": "Valencia",
+        "Valoración media": 2.271767497590471
+    },
+    {
+        "index": 36,
+        "ID proveedor": 37,
+        "Nombre proveedor": "S.Coop. Seguridad Sierra",
+        "Teléfono": "625732175",
+        "Servicio": "Seguridad",
+        "Localidad": "Valencia",
+        "Valoración media": 3.6715228305831036
+    },
+    {
+        "index": 37,
+        "ID proveedor": 38,
+        "Nombre proveedor": "S.Coop. Plagas Malo",
+        "Teléfono": "610144827",
+        "Servicio": "Control de plagas",
+        "Localidad": "Valencia",
+        "Valoración media": 4.426671329689688
+    },
+    {
+        "index": 38,
+        "ID proveedor": 39,
+        "Nombre proveedor": "S.Coop. Electricistas Gallardo",
+        "Teléfono": "645390489",
+        "Servicio": "Reparación instalaciones eléctricas",
+        "Localidad": "Valencia",
+        "Valoración media": 4.401899083873264
+    },
+    {
+        "index": 39,
+        "ID proveedor": 40,
+        "Nombre proveedor": "S.L. Gestión de Residuos Zurita",
+        "Teléfono": "696794268",
+        "Servicio": "Gestión de residuos",
+        "Localidad": "Valencia",
+        "Valoración media": 3.0430136901282956
+    },
+    {
+        "index": 40,
+        "ID proveedor": 41,
+        "Nombre proveedor": "S.Com. Seguridad Perera",
+        "Teléfono": "676166390",
+        "Servicio": "Seguridad",
+        "Localidad": "Valencia",
+        "Valoración media": 4.345647289646315
+    },
+    {
+        "index": 41,
+        "ID proveedor": 42,
+        "Nombre proveedor": "S.L. Fontaneros Águila",
+        "Teléfono": "669858032",
+        "Servicio": "Fontanería",
+        "Localidad": "Valencia",
+        "Valoración media": 2.3567338866784886
+    },
+    {
+        "index": 42,
+        "ID proveedor": 43,
+        "Nombre proveedor": "S.A. Emergencia Sanchez",
+        "Teléfono": "678880550",
+        "Servicio": "Servicios de emergencia",
+        "Localidad": "Valencia",
+        "Valoración media": 4.9534548973033665
+    },
+    {
+        "index": 43,
+        "ID proveedor": 44,
+        "Nombre proveedor": "S.L.N.E Mantenimiento Sanabria",
+        "Teléfono": "681500177",
+        "Servicio": "Mantenimiento áreas comunes",
+        "Localidad": "Valencia",
+        "Valoración media": 1.572256060964464
+    },
+    {
+        "index": 44,
+        "ID proveedor": 45,
+        "Nombre proveedor": "S.Com. Electricistas Cornejo",
+        "Teléfono": "698891206",
+        "Servicio": "Reparación instalaciones eléctricas",
+        "Localidad": "Valencia",
+        "Valoración media": 1.0818392122091711
+    },
+    {
+        "index": 45,
+        "ID proveedor": 46,
+        "Nombre proveedor": "S.C.P Electricistas Valcárcel",
+        "Teléfono": "685264155",
+        "Servicio": "Reparación instalaciones eléctricas",
+        "Localidad": "Valencia",
+        "Valoración media": 1.76593921235028
+    },
+    {
+        "index": 46,
+        "ID proveedor": 47,
+        "Nombre proveedor": "S.Coop. Fontaneros Sala",
+        "Teléfono": "634069916",
+        "Servicio": "Fontanería",
+        "Localidad": "Valencia",
+        "Valoración media": 3.259845283791949
+    },
+    {
+        "index": 47,
+        "ID proveedor": 48,
+        "Nombre proveedor": "S.L. Fontaneros Salcedo",
+        "Teléfono": "668955411",
+        "Servicio": "Fontanería",
+        "Localidad": "Valencia",
+        "Valoración media": 3.73842939902976
+    },
+    {
+        "index": 48,
+        "ID proveedor": 49,
+        "Nombre proveedor": "S.Coop. Limpieza Francisco",
+        "Teléfono": "693104258",
+        "Servicio": "Servicios de limpieza",
+        "Localidad": "Valencia",
+        "Valoración media": 3.76554033774868
+    },
+    {
+        "index": 49,
+        "ID proveedor": 50,
+        "Nombre proveedor": "S.L. Fontaneros Puente",
+        "Teléfono": "653886506",
+        "Servicio": "Fontanería",
+        "Localidad": "Valencia",
+        "Valoración media": 3.045742588361429
+    },
+    {
+        "index": 50,
+        "ID proveedor": 51,
+        "Nombre proveedor": "S.L. Mantenimiento Tovar",
+        "Teléfono": "650409103",
+        "Servicio": "Reparación ascensores",
+        "Localidad": "Valencia",
+        "Valoración media": 3.4255470433162127
+    },
+    {
+        "index": 51,
+        "ID proveedor": 52,
+        "Nombre proveedor": "S.Coop. Mantenimiento Jimenez",
+        "Teléfono": "624883435",
+        "Servicio": "Mantenimiento áreas comunes",
+        "Localidad": "Valencia",
+        "Valoración media": 1.3494353232998737
+    },
+    {
+        "index": 52,
+        "ID proveedor": 53,
+        "Nombre proveedor": "S.A. Pintores Cerdán",
+        "Teléfono": "682800643",
+        "Servicio": "Pintura y reparación de paredes",
+        "Localidad": "Valencia",
+        "Valoración media": 3.0925577589705293
+    },
+    {
+        "index": 53,
+        "ID proveedor": 54,
+        "Nombre proveedor": "S.A. Plagas Guzmán",
+        "Teléfono": "675255223",
+        "Servicio": "Control de plagas",
+        "Localidad": "Valencia",
+        "Valoración media": 3.97611525979056
+    },
+    {
+        "index": 54,
+        "ID proveedor": 55,
+        "Nombre proveedor": "S.Com. Mantenimiento Royo",
+        "Teléfono": "634299881",
+        "Servicio": "Mantenimiento calefacción y aire acondicionado",
+        "Localidad": "Valencia",
+        "Valoración media": 2.9050581807630236
+    },
+    {
+        "index": 55,
+        "ID proveedor": 56,
+        "Nombre proveedor": "S.A. Mantenimiento Ramos",
+        "Teléfono": "621180201",
+        "Servicio": "Mantenimiento calefacción y aire acondicionado",
+        "Localidad": "Valencia",
+        "Valoración media": 4.268118101510279
+    },
+    {
+        "index": 56,
+        "ID proveedor": 57,
+        "Nombre proveedor": "S.Coop. Piscinas Ferrándiz",
+        "Teléfono": "649171590",
+        "Servicio": "Limpieza y mantenimiento de piscinas",
+        "Localidad": "Valencia",
+        "Valoración media": 4.660162030533387
+    },
+    {
+        "index": 57,
+        "ID proveedor": 58,
+        "Nombre proveedor": "S.Com. Mantenimiento Camacho",
+        "Teléfono": "660092647",
+        "Servicio": "Reparación ascensores",
+        "Localidad": "Valencia",
+        "Valoración media": 3.1907466537443288
+    },
+    {
+        "index": 58,
+        "ID proveedor": 59,
+        "Nombre proveedor": "S.C.P Gestión de Residuos Jerez",
+        "Teléfono": "613970741",
+        "Servicio": "Gestión de residuos",
+        "Localidad": "Valencia",
+        "Valoración media": 2.356224895240129
+    },
+    {
+        "index": 59,
+        "ID proveedor": 60,
+        "Nombre proveedor": "S.Com. Mantenimiento Rivera",
+        "Teléfono": "665574242",
+        "Servicio": "Reparación ascensores",
+        "Localidad": "Valencia",
+        "Valoración media": 4.549487702721553
+    },
+    {
+        "index": 60,
+        "ID proveedor": 61,
+        "Nombre proveedor": "S.Coop. Limpieza Benítez",
+        "Teléfono": "627876305",
+        "Servicio": "Servicios de limpieza",
+        "Localidad": "Valencia",
+        "Valoración media": 3.822648968827198
+    },
+    {
+        "index": 61,
+        "ID proveedor": 62,
+        "Nombre proveedor": "S.A.D Pintores Frías",
+        "Teléfono": "630550568",
+        "Servicio": "Pintura y reparación de paredes",
+        "Localidad": "Valencia",
+        "Valoración media": 4.515731366419404
+    },
+    {
+        "index": 62,
+        "ID proveedor": 63,
+        "Nombre proveedor": "S.A. Electricistas Juan",
+        "Teléfono": "661627239",
+        "Servicio": "Reparación instalaciones eléctricas",
+        "Localidad": "Valencia",
+        "Valoración media": 1.2215309578798537
+    },
+    {
+        "index": 63,
+        "ID proveedor": 64,
+        "Nombre proveedor": "S.Com. Limpieza Castejón",
+        "Teléfono": "698880508",
+        "Servicio": "Servicios de limpieza",
+        "Localidad": "Valencia",
+        "Valoración media": 3.3108878870008334
+    },
+    {
+        "index": 64,
+        "ID proveedor": 65,
+        "Nombre proveedor": "S.Com. Mantenimiento Quero",
+        "Teléfono": "619990107",
+        "Servicio": "Reparación ascensores",
+        "Localidad": "Valencia",
+        "Valoración media": 3.18161624748536
+    },
+    {
+        "index": 65,
+        "ID proveedor": 66,
+        "Nombre proveedor": "S.L.N.E Gestión de Residuos Valera",
+        "Teléfono": "660449982",
+        "Servicio": "Gestión de residuos",
+        "Localidad": "Valencia",
+        "Valoración media": 3.4765263641147266
+    },
+    {
+        "index": 66,
+        "ID proveedor": 67,
+        "Nombre proveedor": "S.Com. Plagas Carrillo",
+        "Teléfono": "619915233",
+        "Servicio": "Control de plagas",
+        "Localidad": "Valencia",
+        "Valoración media": 1.820215684740511
+    },
+    {
+        "index": 67,
+        "ID proveedor": 68,
+        "Nombre proveedor": "S.L.L. Fontaneros Castellanos",
+        "Teléfono": "644753429",
+        "Servicio": "Fontanería",
+        "Localidad": "Valencia",
+        "Valoración media": 3.2958712102658847
+    },
+    {
+        "index": 68,
+        "ID proveedor": 69,
+        "Nombre proveedor": "S.A.D Piscinas Escribano",
+        "Teléfono": "690761194",
+        "Servicio": "Limpieza y mantenimiento de piscinas",
+        "Localidad": "Valencia",
+        "Valoración media": 3.0697139672277483
+    },
+    {
+        "index": 69,
+        "ID proveedor": 70,
+        "Nombre proveedor": "S.L. Mantenimiento González",
+        "Teléfono": "617025732",
+        "Servicio": "Mantenimiento calefacción y aire acondicionado",
+        "Localidad": "Valencia",
+        "Valoración media": 2.4895747363394194
+    },
+    {
+        "index": 70,
+        "ID proveedor": 71,
+        "Nombre proveedor": "S.A. Mantenimiento Perez",
+        "Teléfono": "668160059",
+        "Servicio": "Reparación ascensores",
+        "Localidad": "Valencia",
+        "Valoración media": 4.321509155079566
+    },
+    {
+        "index": 71,
+        "ID proveedor": 72,
+        "Nombre proveedor": "S.L.U. Seguridad Vazquez",
+        "Teléfono": "689018217",
+        "Servicio": "Seguridad",
+        "Localidad": "Valencia",
+        "Valoración media": 2.993730302205709
+    },
+    {
+        "index": 72,
+        "ID proveedor": 73,
+        "Nombre proveedor": "S.A. Limpieza Arévalo",
+        "Teléfono": "680276875",
+        "Servicio": "Servicios de limpieza",
+        "Localidad": "Valencia",
+        "Valoración media": 2.4983920543636917
+    },
+    {
+        "index": 73,
+        "ID proveedor": 74,
+        "Nombre proveedor": "S.L. Mantenimiento Guzmán",
+        "Teléfono": "685180717",
+        "Servicio": "Mantenimiento calefacción y aire acondicionado",
+        "Localidad": "Valencia",
+        "Valoración media": 4.800963115528327
+    },
+    {
+        "index": 74,
+        "ID proveedor": 75,
+        "Nombre proveedor": "S.L. Seguridad Colom",
+        "Teléfono": "685452816",
+        "Servicio": "Seguridad",
+        "Localidad": "Valencia",
+        "Valoración media": 4.023171671438391
+    },
+    {
+        "index": 75,
+        "ID proveedor": 76,
+        "Nombre proveedor": "S.A. Piscinas Llabrés",
+        "Teléfono": "621711024",
+        "Servicio": "Limpieza y mantenimiento de piscinas",
+        "Localidad": "Valencia",
+        "Valoración media": 4.285939431698452
+    },
+    {
+        "index": 76,
+        "ID proveedor": 77,
+        "Nombre proveedor": "S.L. Piscinas Calvet",
+        "Teléfono": "677885288",
+        "Servicio": "Limpieza y mantenimiento de piscinas",
+        "Localidad": "Valencia",
+        "Valoración media": 4.228397315644762
+    },
+    {
+        "index": 77,
+        "ID proveedor": 78,
+        "Nombre proveedor": "S.L.L. Pintores Galiano",
+        "Teléfono": "616368286",
+        "Servicio": "Pintura y reparación de paredes",
+        "Localidad": "Valencia",
+        "Valoración media": 3.184456908188067
+    },
+    {
+        "index": 78,
+        "ID proveedor": 79,
+        "Nombre proveedor": "S.Com. Fontaneros Palacio",
+        "Teléfono": "612276716",
+        "Servicio": "Fontanería",
+        "Localidad": "Valencia",
+        "Valoración media": 2.621845010115506
+    },
+    {
+        "index": 79,
+        "ID proveedor": 80,
+        "Nombre proveedor": "S.Coop. Mantenimiento Madrid",
+        "Teléfono": "633153821",
+        "Servicio": "Mantenimiento áreas comunes",
+        "Localidad": "Valencia",
+        "Valoración media": 2.403871826803664
+    },
+    {
+        "index": 80,
+        "ID proveedor": 81,
+        "Nombre proveedor": "S.Com. Plagas Rosado",
+        "Teléfono": "661449098",
+        "Servicio": "Control de plagas",
+        "Localidad": "Valencia",
+        "Valoración media": 1.210144134195012
+    },
+    {
+        "index": 81,
+        "ID proveedor": 82,
+        "Nombre proveedor": "S.C.P Electricistas Bayona",
+        "Teléfono": "661682233",
+        "Servicio": "Reparación instalaciones eléctricas",
+        "Localidad": "Valencia",
+        "Valoración media": 1.7947746179291828
+    },
+    {
+        "index": 82,
+        "ID proveedor": 83,
+        "Nombre proveedor": "S.Com. Emergencia Tamarit",
+        "Teléfono": "645144555",
+        "Servicio": "Servicios de emergencia",
+        "Localidad": "Valencia",
+        "Valoración media": 2.0941365519451143
+    },
+    {
+        "index": 83,
+        "ID proveedor": 84,
+        "Nombre proveedor": "S.L. Mantenimiento Sanmartín",
+        "Teléfono": "691883292",
+        "Servicio": "Mantenimiento calefacción y aire acondicionado",
+        "Localidad": "Valencia",
+        "Valoración media": 3.679394608879841
+    },
+    {
+        "index": 84,
+        "ID proveedor": 85,
+        "Nombre proveedor": "S.Com. Mantenimiento Blanco",
+        "Teléfono": "689881160",
+        "Servicio": "Reparación ascensores",
+        "Localidad": "Valencia",
+        "Valoración media": 1.1228876962136534
+    },
+    {
+        "index": 85,
+        "ID proveedor": 86,
+        "Nombre proveedor": "S.A. Mantenimiento Lledó",
+        "Teléfono": "689154200",
+        "Servicio": "Reparación ascensores",
+        "Localidad": "Valencia",
+        "Valoración media": 1.655455246990834
+    },
+    {
+        "index": 86,
+        "ID proveedor": 87,
+        "Nombre proveedor": "S.A. Electricistas Gelabert",
+        "Teléfono": "678935974",
+        "Servicio": "Reparación instalaciones eléctricas",
+        "Localidad": "Valencia",
+        "Valoración media": 3.960944499089286
+    },
+    {
+        "index": 87,
+        "ID proveedor": 88,
+        "Nombre proveedor": "S.A.U Mantenimiento Mayoral",
+        "Teléfono": "664919655",
+        "Servicio": "Reparación ascensores",
+        "Localidad": "Valencia",
+        "Valoración media": 4.53194057061013
+    },
+    {
+        "index": 88,
+        "ID proveedor": 89,
+        "Nombre proveedor": "S.Com. Mantenimiento Escolano",
+        "Teléfono": "671125760",
+        "Servicio": "Mantenimiento áreas comunes",
+        "Localidad": "Valencia",
+        "Valoración media": 2.2360783744226436
+    },
+    {
+        "index": 89,
+        "ID proveedor": 90,
+        "Nombre proveedor": "S.Coop. Mantenimiento Cazorla",
+        "Teléfono": "648430470",
+        "Servicio": "Mantenimiento áreas comunes",
+        "Localidad": "Valencia",
+        "Valoración media": 2.3373693713846304
+    },
+    {
+        "index": 90,
+        "ID proveedor": 91,
+        "Nombre proveedor": "S.A.U Mantenimiento Bilbao",
+        "Teléfono": "634327338",
+        "Servicio": "Reparación ascensores",
+        "Localidad": "Valencia",
+        "Valoración media": 2.828260773309767
+    },
+    {
+        "index": 91,
+        "ID proveedor": 92,
+        "Nombre proveedor": "S.A.T. Pintores Benito",
+        "Teléfono": "687794166",
+        "Servicio": "Pintura y reparación de paredes",
+        "Localidad": "Valencia",
+        "Valoración media": 4.058958436748122
+    },
+    {
+        "index": 92,
+        "ID proveedor": 93,
+        "Nombre proveedor": "S.L.N.E Pintores Duarte",
+        "Teléfono": "657220597",
+        "Servicio": "Pintura y reparación de paredes",
+        "Localidad": "Valencia",
+        "Valoración media": 1.2577482838783323
+    },
+    {
+        "index": 93,
+        "ID proveedor": 94,
+        "Nombre proveedor": "S.A.D Plagas Cañizares",
+        "Teléfono": "658102808",
+        "Servicio": "Control de plagas",
+        "Localidad": "Valencia",
+        "Valoración media": 3.903341890513771
+    },
+    {
+        "index": 94,
+        "ID proveedor": 95,
+        "Nombre proveedor": "S.L. Fontaneros Osuna",
+        "Teléfono": "672660332",
+        "Servicio": "Fontanería",
+        "Localidad": "Valencia",
+        "Valoración media": 2.1838770295593166
+    },
+    {
+        "index": 95,
+        "ID proveedor": 96,
+        "Nombre proveedor": "S.L.U. Gestión de Residuos Solsona",
+        "Teléfono": "644334652",
+        "Servicio": "Gestión de residuos",
+        "Localidad": "Valencia",
+        "Valoración media": 3.119545155900748
+    },
+    {
+        "index": 96,
+        "ID proveedor": 97,
+        "Nombre proveedor": "S.L. Limpieza Carranza",
+        "Teléfono": "641769939",
+        "Servicio": "Servicios de limpieza",
+        "Localidad": "Valencia",
+        "Valoración media": 3.788820644416638
+    },
+    {
+        "index": 97,
+        "ID proveedor": 98,
+        "Nombre proveedor": "S.Com. Seguridad Garay",
+        "Teléfono": "668036777",
+        "Servicio": "Seguridad",
+        "Localidad": "Valencia",
+        "Valoración media": 2.3013350988510446
+    },
+    {
+        "index": 98,
+        "ID proveedor": 99,
+        "Nombre proveedor": "S.Coop. Pintores Ramírez",
+        "Teléfono": "623183961",
+        "Servicio": "Pintura y reparación de paredes",
+        "Localidad": "Valencia",
+        "Valoración media": 4.860630778428307
+    },
+    {
+        "index": 99,
+        "ID proveedor": 100,
+        "Nombre proveedor": "S.C.P Piscinas Bermúdez",
+        "Teléfono": "620124734",
+        "Servicio": "Limpieza y mantenimiento de piscinas",
+        "Localidad": "Valencia",
+        "Valoración media": 1.037650924086856
+    }
+]
