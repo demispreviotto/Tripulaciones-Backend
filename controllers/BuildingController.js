@@ -40,10 +40,15 @@ const BuildingController = {
   },
   async getBuildingById(req, res) {
     try {
-      const building = await Building.findById(req.params.id).populate({
-        path: "ownerIds",
-        select: "firstName lastName",
-      });
+      const building = await Building.findById(req.params.id)
+        .populate({
+          path: "ownerIds",
+          select: "firstName lastName",
+        })
+        .populate({
+          path: "incidenceIds",
+          select: "category status createdAt",
+        });
       if (!building) {
         return res.status(404).send({ message: "Finca no encontrada" });
       }
