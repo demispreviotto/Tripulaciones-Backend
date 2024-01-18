@@ -186,7 +186,11 @@ const IncidenceController = {
   },
   async getIncidenceById(req, res) {
     try {
-      const incidence = await Incidence.findById(req.params.id);
+      const incidence = await Incidence.findById(req.params.id)
+        .populate({
+          path: "buildingId",
+          select: "address number",
+        });
       if (!incidence) {
         return res.status(404).send({ message: "Incidencia no encontrada" });
       }

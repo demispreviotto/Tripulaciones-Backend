@@ -47,7 +47,8 @@ const BuildingController = {
         })
         .populate({
           path: "incidenceIds",
-          select: "category status createdAt",
+          select: "summary category status createdAt", // Update the select fields
+          model: "Incidence",
         });
       if (!building) {
         return res.status(404).send({ message: "Finca no encontrada" });
