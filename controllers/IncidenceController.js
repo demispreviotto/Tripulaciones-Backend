@@ -67,12 +67,10 @@ const IncidenceController = {
 
         if (existingIncidence) {
           console.log("Incidence already exists for message:", message);
-          continue; // Skip to the next iteration
+          continue;
         }
 
         incidencesToCreate.push(incidenceData);
-
-        // await updateMessageState(message.id, "received");
 
         const owner = await Owner.findOne({ phone: message.phone });
 
@@ -82,13 +80,10 @@ const IncidenceController = {
         }
       }
 
-      // Log incidences to be created
       console.log("Incidences to create:", incidencesToCreate);
 
       if (incidencesToCreate.length > 0) {
-        // Save incidences to MongoDB
         console.log("Attempting to create incidences...");
-        // const createdIncidences = await Incidence.create(incidencesToCreate);
         const createdIncidences = await Promise.all(
           incidencesToCreate.map(async (incidenceData) => {
             const incidence = await Incidence.create(incidenceData);
@@ -105,7 +100,6 @@ const IncidenceController = {
           }
         });
 
-        // Update status in the original JSON array
         await fs.writeFile(
           incidenceDataPath,
           JSON.stringify(messages, null, 2),
@@ -116,66 +110,12 @@ const IncidenceController = {
           .status(201)
           .send({ message: "Incidencias creadas exitosamente", createdIncidences });
       } else {
-        // No incidences to create
         res.status(200).send({ message: "No nuevas incidencias para crear" });
       }
     } catch (error) {
       next(error);
     }
   },
-
-
-  // async fetchAndCreateIncidences(req, res, next) {
-  //   try {
-  //     const messages = await fetchMessages();
-  //     if (messages.length === 0) {
-  //       return res.status(200).send({ message: "No messages to process" });
-  //     }
-  //     const filteredMessages = messages.filter(
-  //       (message) => message.status === "delivered"
-  //     );
-  //     const createdIncidences = [];
-
-  //     for (const message of filteredMessages) {
-  //       const incidenceData = transformMessageToIncidence(message);
-
-  //       const existingIncidence = await Incidence.findOne(incidenceData);
-
-  //       if (existingIncidence) {
-  //         console.log("Incidence already exists for message:", message);
-  //         continue; // Skip to the next iteration
-  //       }
-
-  //       const incidence = await Incidence.create(incidenceData);
-  //       await incidence.save();
-
-  //       await updateMessageState(message.id, "received");
-
-  //       const owner = await Owner.findOne({ phone: message.phone });
-
-  //       if (owner) {
-  //         console.error('owner found')
-  //         incidence.ownerIds.push(owner._id);
-  //         await incidence.save();
-
-  //         owner.incidenceIds.push(incidence._id);
-  //         await owner.save();
-
-  //         const buildings = await Building.find({ ownerIds: owner._id });
-  //         for (const building of buildings) {
-  //           building.incidenceIds.push(incidence._id);
-  //           await building.save();
-  //         }
-  //       }
-  //       createdIncidences.push(incidence);
-  //     }
-  //     res
-  //       .status(201)
-  //       .send({ message: "Incidencia creada exitosamente", createdIncidences });
-  //   } catch (error) {
-  //     next(error);
-  //   }
-  // },
 
   async createManualIncidence(req, res) {
     try {
@@ -234,10 +174,6 @@ const IncidenceController = {
       const incidences = await Incidence.find().populate({
         path: "buildingId",
         select: "address number",
-        // populate: {
-        //   path: "doorIds",
-        //   select: "incidenceIds"
-        // }
       });
       res.send(incidences);
       if (incidences.length < 1) {

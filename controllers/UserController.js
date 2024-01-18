@@ -91,7 +91,6 @@ const UserController = {
   async getLoggedUser(req, res) {
     try {
       const user = await User.findById({ _id: req.user._id });
-      // .populate()
       res.status(200).send(user);
     } catch (error) {
       console.log(error);
