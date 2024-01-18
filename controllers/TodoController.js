@@ -42,7 +42,6 @@ const TodoController = {
       next(error);
     }
   },
-
   async getAllTodo(req, res) {
     try {
       const todos = await Todo.find();
@@ -55,7 +54,6 @@ const TodoController = {
       res.status(500).send({ message: "Error en la búsqueda de las tareas" });
     }
   },
-
   async getTodoById(req, res) {
     try {
       const todo = await Todo.findById(req.params.id);
@@ -68,7 +66,6 @@ const TodoController = {
       res.status(500).send({ message: "Error en la búsqueda de la tarea" });
     }
   },
-
   async updateTodo(req, res) {
     try {
       const todo = await Todo.findByIdAndUpdate(req.params.id, req.body, {
@@ -83,7 +80,6 @@ const TodoController = {
       res.status(500).send({ message: "Error al modificar la tarea" });
     }
   },
-
   async deleteTodo(req, res) {
     try {
       const todo = await Todo.findByIdAndDelete(req.params.id);
