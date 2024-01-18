@@ -6,12 +6,12 @@ require("dotenv").config();
 
 const fs = require("fs").promises;
 const path = require("path");
-const incidenceDataPath = path.join(__dirname, "../data/incidenceData.json");
+const incidenceDataPath = path.join(__dirname, "../data/json_inc.json");
 
 const fetchMessages = async () => {
   try {
     const data = await fs.readFile(incidenceDataPath, "utf-8");
-    console.log("Read data from incidenceData.json", data);
+    console.error("Read data from incidenceData.json", data);
     return JSON.parse(data);
   } catch (error) {
     console.error("Error al hacer el fetchMessages", error);
@@ -51,18 +51,32 @@ const IncidenceController = {
     try {
       const messages = await fetchMessages();
       if (messages.length === 0) {
-        return [];
+        return res.status(200).send({ message: "No messages to process" });
       }
       const filteredMessages = messages.filter(
-        (message) => message.status === "delivered"
+        (message) => message.status === ""
       );
       const createdIncidences = [];
+
       for (const message of filteredMessages) {
         const incidenceData = transformMessageToIncidence(message);
+
+        const existingIncidence = await Incidence.findOne(incidenceData);
+
+        if (existingIncidence) {
+          console.log("Incidence already exists for message:", message);
+          continue; // Skip to the next iteration
+        }
+
         const incidence = await Incidence.create(incidenceData);
+        await incidence.save();
+
         await updateMessageState(message.id, "received");
+
         const owner = await Owner.findOne({ phone: message.phone });
+
         if (owner) {
+          console.error('owner found')
           incidence.ownerIds.push(owner._id);
           await incidence.save();
           owner.incidenceIds.push(incidence._id);
