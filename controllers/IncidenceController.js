@@ -61,14 +61,19 @@ const IncidenceController = {
         const incidenceData = transformMessageToIncidence(message);
         const incidence = await Incidence.create(incidenceData);
         await updateMessageState(message.id, "received");
-        createdIncidences.push(incidence);
+        const owner = await Owner.findOne({ phone: message.phone });
         if (owner) {
           incidence.ownerIds.push(owner._id);
           await incidence.save();
           owner.incidenceIds.push(incidence._id);
           await owner.save();
+          const buildings = await Building.find({ ownerIds: owner._id });
+          for (const building of buildings) {
+            building.incidenceIds.push(incidence._id);
+            await building.save();
+          }
         }
-        const owner = await Owner.findOne({ phone: message.phone });
+        createdIncidences.push(incidence);
       }
       res
         .status(201)
