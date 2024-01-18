@@ -125,7 +125,7 @@ app.post("/createOwnersFromJson", async (req, res) => {
                     firstName: nameParts,
                     lastName,
                     phone,
-                    email: `${firstNameWithoutLastName}${lastName}@fincup.com`,
+                    email: `${nameParts}${lastName}@fincup.com`,
                     buildingIds: [building._id],
                 });
 
@@ -133,7 +133,7 @@ app.post("/createOwnersFromJson", async (req, res) => {
                 await owner.save();
 
                 // Update the building with the new owner's ID
-                await Building.findByIdAndUpdate(building._id, { $push: { ownerIds: owner._id } });
+                await Building.findByIdAndUpdate(building._id, { $push: { ownerIds: owner._id } }, { new: true });
 
                 console.log("Owner created successfully:", owner);
             } else {
