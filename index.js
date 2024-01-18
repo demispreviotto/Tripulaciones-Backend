@@ -11,6 +11,7 @@ const jsonFincasData = require("./data/json_fincas.json");
 
 const { handleTypeError } = require("./middleware/errors");
 const { dbConnection } = require("./config/config");
+const Incidence = require("./models/Incidence");
 dbConnection();
 
 app.use(express.json());
@@ -72,7 +73,7 @@ app.post("/createBuildingsFromJson", async (req, res) => {
                 } else {
                     console.log("Building already exists, skipping:", existingBuilding);
                     // Skip processing the rest of the JSON data if a building already exists
-                    break;
+                    continue;
                 }
             } else {
                 console.error("Error: 'address' property is undefined or missing in JSON data");
@@ -148,7 +149,36 @@ app.post("/createOwnersFromJson", async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
+app.post("/mapIncidencesToBuildings", async (req, res) => {
+    try {
+        // Fetch all incidences from MongoDB
+        const allIncidences = await Incidence.find();
 
+        // Iterate through each incidence
+        for (const incidence of allIncidences) {
+            // Find the owner based on ownerIds
+            const owner = await Owner.findOne({ _id: incidence.ownerIds[0] });
+
+            if (owner && owner.buildingIds) {
+                // Iterate through each building ID in owner's buildingIds
+                for (const buildingId of owner.buildingIds) {
+                    // Find the building based on buildingId
+                    const building = await Building.findOne({ _id: buildingId });
+
+                    if (building) {
+                        // Push the incidence ID into incidenceIds
+                        building.incidenceIds.push(incidence._id);
+                        await building.save();
+                    }
+                }
+            }
+        }
+
+        res.status(200).send({ message: "Incidences mapped to buildings successfully" });
+    } catch (error) {
+        res.status(501).send("error:", error);
+    }
+})
 
 app.use(handleTypeError);
 

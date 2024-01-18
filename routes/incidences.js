@@ -11,5 +11,5 @@ router.get("/getAllIncidences", IncidenceController.getAllIncidences);
 router.get("/getIncidenceById/:id", IncidenceController.getIncidenceById);
 router.put("/updateIncidence/:id", authentication, IncidenceController.updateIncidence);
 router.delete("/deleteIncidence/:id", authentication, IncidenceController.deleteIncidence);
-router.delete("/deleteAll/", authentication, IncidenceController.deleteAll);
+router.delete("/deleteAll/", IncidenceController.deleteAll);
 module.exports = router;

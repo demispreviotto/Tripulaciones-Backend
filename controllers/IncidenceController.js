@@ -19,22 +19,23 @@ const fetchMessages = async () => {
   }
 };
 
-const updateMessageState = async (messageId, newState) => {
+const updateMessageStatus = async (indices) => {
   try {
     const messages = await fetchMessages();
-    const updatedMessages = messages.map((message) => {
-      if (message.id === messageId) {
-        return { ...message, status: newState };
+    indices.forEach((index) => {
+      const message = messages.find((msg) => msg.index === index);
+      if (message) {
+        message.status = "received";
       }
-      return message;
     });
+
     await fs.writeFile(
       incidenceDataPath,
-      JSON.stringify(updatedMessages, null, 2),
+      JSON.stringify(messages, null, 2),
       "utf-8"
     );
   } catch (error) {
-    console.error("Error en updateMessageState", error);
+    console.error("Error in updateMessageStatus", error);
     throw error;
   }
 };
@@ -44,6 +45,7 @@ const transformMessageToIncidence = (message) => ({
   category: message.category,
   originalMessage: message.summary,
   status: "received",
+  index: message.index,
 });
 
 const IncidenceController = {
@@ -54,9 +56,9 @@ const IncidenceController = {
         return res.status(200).send({ message: "No messages to process" });
       }
       const filteredMessages = messages.filter(
-        (message) => message.status === ""
+        (message) => message.status === "delivered"
       );
-      const createdIncidences = [];
+      const incidencesToCreate = [];
 
       for (const message of filteredMessages) {
         const incidenceData = transformMessageToIncidence(message);
@@ -68,34 +70,112 @@ const IncidenceController = {
           continue; // Skip to the next iteration
         }
 
-        const incidence = await Incidence.create(incidenceData);
-        await incidence.save();
+        incidencesToCreate.push(incidenceData);
 
-        await updateMessageState(message.id, "received");
+        // await updateMessageState(message.id, "received");
 
         const owner = await Owner.findOne({ phone: message.phone });
 
         if (owner) {
-          console.error('owner found')
-          incidence.ownerIds.push(owner._id);
-          await incidence.save();
-          owner.incidenceIds.push(incidence._id);
-          await owner.save();
-          const buildings = await Building.find({ ownerIds: owner._id });
-          for (const building of buildings) {
-            building.incidenceIds.push(incidence._id);
-            await building.save();
-          }
+          incidenceData.ownerIds = owner._id;
+          console.error(incidenceData.ownerIds)
         }
-        createdIncidences.push(incidence);
       }
-      res
-        .status(201)
-        .send({ message: "Incidencia creada exitosamente", createdIncidences });
+
+      // Log incidences to be created
+      console.log("Incidences to create:", incidencesToCreate);
+
+      if (incidencesToCreate.length > 0) {
+        // Save incidences to MongoDB
+        console.log("Attempting to create incidences...");
+        // const createdIncidences = await Incidence.create(incidencesToCreate);
+        const createdIncidences = await Promise.all(
+          incidencesToCreate.map(async (incidenceData) => {
+            const incidence = await Incidence.create(incidenceData);
+            return incidence;
+          }))
+
+        console.log("Created incidences:", createdIncidences);
+
+        const indicesToUpdate = createdIncidences.map((incidence) => incidence.index);
+
+        messages.forEach((message) => {
+          if (indicesToUpdate.includes(message.index)) {
+            message.status = "received";
+          }
+        });
+
+        // Update status in the original JSON array
+        await fs.writeFile(
+          incidenceDataPath,
+          JSON.stringify(messages, null, 2),
+          "utf-8"
+        );
+
+        res
+          .status(201)
+          .send({ message: "Incidencias creadas exitosamente", createdIncidences });
+      } else {
+        // No incidences to create
+        res.status(200).send({ message: "No nuevas incidencias para crear" });
+      }
     } catch (error) {
       next(error);
     }
   },
+
+
+  // async fetchAndCreateIncidences(req, res, next) {
+  //   try {
+  //     const messages = await fetchMessages();
+  //     if (messages.length === 0) {
+  //       return res.status(200).send({ message: "No messages to process" });
+  //     }
+  //     const filteredMessages = messages.filter(
+  //       (message) => message.status === "delivered"
+  //     );
+  //     const createdIncidences = [];
+
+  //     for (const message of filteredMessages) {
+  //       const incidenceData = transformMessageToIncidence(message);
+
+  //       const existingIncidence = await Incidence.findOne(incidenceData);
+
+  //       if (existingIncidence) {
+  //         console.log("Incidence already exists for message:", message);
+  //         continue; // Skip to the next iteration
+  //       }
+
+  //       const incidence = await Incidence.create(incidenceData);
+  //       await incidence.save();
+
+  //       await updateMessageState(message.id, "received");
+
+  //       const owner = await Owner.findOne({ phone: message.phone });
+
+  //       if (owner) {
+  //         console.error('owner found')
+  //         incidence.ownerIds.push(owner._id);
+  //         await incidence.save();
+
+  //         owner.incidenceIds.push(incidence._id);
+  //         await owner.save();
+
+  //         const buildings = await Building.find({ ownerIds: owner._id });
+  //         for (const building of buildings) {
+  //           building.incidenceIds.push(incidence._id);
+  //           await building.save();
+  //         }
+  //       }
+  //       createdIncidences.push(incidence);
+  //     }
+  //     res
+  //       .status(201)
+  //       .send({ message: "Incidencia creada exitosamente", createdIncidences });
+  //   } catch (error) {
+  //     next(error);
+  //   }
+  // },
 
   async createManualIncidence(req, res) {
     try {
