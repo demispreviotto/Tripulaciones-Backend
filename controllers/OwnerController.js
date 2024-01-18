@@ -1,5 +1,6 @@
 const Building = require("../models/Building");
 const Door = require("../models/Door");
+const Incidence = require("../models/Incidence");
 const Owner = require("../models/Owner");
 require("dotenv").config();
 
@@ -66,6 +67,18 @@ const OwnerController = {
     } catch (error) {
       console.error(error);
       res.status(500).send({ message: "Error modificando al propietario" });
+    }
+  },
+  async deleteAll(req, res) {
+    try {
+      await Owner.deleteMany();
+      await Door.updateMany({}, { $set: { doorIds: [] } });
+      await Incidence.updateMany({}, { $set: { incidenceIds: [] } });
+      await Building.updateMany({}, { $set: { buildingIds: [] } });
+      res.send({ message: "Propietarios eliminados exitosamente" });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send({ message: "Error eliminando los propietarios" });
     }
   },
 };
