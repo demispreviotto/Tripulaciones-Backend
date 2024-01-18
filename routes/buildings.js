@@ -10,5 +10,6 @@ router.get("/getAllBuildings", BuildingController.getAllBuildings);
 router.get("/getBuildingById/:id", BuildingController.getBuildingById);
 router.put("/updateBuilding/:id", authentication, BuildingController.updateBuildingById);
 router.delete("/deleteBuildingById/:id", authentication, BuildingController.deleteBuildingById);
+router.delete("/deleteAll", authentication, BuildingController.deleteAll);
 
 module.exports = router;

@@ -1,6 +1,11 @@
 require("dotenv").config();
 const Building = require("../models/Building");
+const Owner = require("../models/Owner");
+const Service = require("../models/Service");
+const Todo = require("../models/Todo");
 const User = require("../models/User");
+const Door = require("../models/Door");
+const Incidence = require("../models/Incidence");
 
 const BuildingController = {
   async createBuilding(req, res, next) {
@@ -77,6 +82,20 @@ const BuildingController = {
     } catch (error) {
       console.error(error);
       res.status(500).send({ message: "Error eliminando la finca" });
+    }
+  },
+  async deleteAll(req, res) {
+    try {
+      await Building.deleteMany();
+      await Service.updateMany({}, { $set: { serviceIds: [] } });
+      await Door.updateMany({}, { $set: { doorIds: [] } });
+      await Incidence.updateMany({}, { $set: { incidenceIds: [] } });
+      await Todo.updateMany({}, { $set: { todoIds: [] } });
+      await Owner.updateMany({}, { $set: { ownerIds: [] } });
+      res.send({ message: "Fincas eliminadas exitosamente" });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send({ message: "Error eliminando las fincas" });
     }
   },
 };
