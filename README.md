@@ -2,13 +2,19 @@
 
 ## About the project
 
-This project consists...
+This project consists on generating an app/web to solve an specific problem, the huge work an administrator of buildings have. The day to day of the administrator is receiving a lot of messages/emails that notify him the incidences a building have. An administrator of buildings in Spain has on average 50 buildings to administrate. Taking into account this number the work of him/her is very vig so we simplified his life. In Fincup, the administrator have a detail of his buildings, incidences that he has to manage and can see the owners of the doors, and the service they have available on the app. In incidences, the administrator can have a follow-up of them and can see the status of the incidence to keep sure is being processed of is pending, etc.
 
 ## Summary of the project
 
-summary...
+We generated endpoints for various aspects.
 
-## Technologies
+In all the controllers the logged user can create buildings, doors, incidences, owners, services, todos, users. as well as update what he want, delete, and get all or only one getting it by his id. The user can log in, log out or if his not user he can register. In the register we encrypted the password for making it more secure and private.
+
+The models were created taking into account different aspects, such as the address in Builings and the CRU that is the id of the building in spain, in Owners we thinked about the email, phone, etc. Users have email, password and more rows.
+
+We connected our DataBase with out team of Data Scientists, due to this, we received a JSON file in which incidences, buildings, owners and more were created and we connected the JSON and generated enpoints to received the information and create that info to our DataBase.
+
+## Technologies used in the project
 
 <p align="center">
   <!--MONGODB-->

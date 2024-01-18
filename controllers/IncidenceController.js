@@ -11,7 +11,7 @@ const incidenceDataPath = path.join(__dirname, "../data/json_inc.json");
 const fetchMessages = async () => {
   try {
     const data = await fs.readFile(incidenceDataPath, "utf-8");
-    console.error("Read data from incidenceData.json", data);
+    console.error("Información leída de incidenceData.json", data);
     return JSON.parse(data);
   } catch (error) {
     console.error("Error al hacer el fetchMessages", error);
@@ -28,14 +28,13 @@ const updateMessageStatus = async (indices) => {
         message.status = "received";
       }
     });
-
     await fs.writeFile(
       incidenceDataPath,
       JSON.stringify(messages, null, 2),
       "utf-8"
     );
   } catch (error) {
-    console.error("Error in updateMessageStatus", error);
+    console.error("Error en updateMessageStatus", error);
     throw error;
   }
 };
@@ -53,70 +52,62 @@ const IncidenceController = {
     try {
       const messages = await fetchMessages();
       if (messages.length === 0) {
-        return res.status(200).send({ message: "No messages to process" });
+        return res.status(200).send({ message: "Sin mensajes para procesar" });
       }
       const filteredMessages = messages.filter(
         (message) => message.status === "delivered"
       );
       const incidencesToCreate = [];
-
       for (const message of filteredMessages) {
         const incidenceData = transformMessageToIncidence(message);
-
         const existingIncidence = await Incidence.findOne(incidenceData);
-
         if (existingIncidence) {
-          console.log("Incidence already exists for message:", message);
+          console.log("La incidencia ya existe para este mensaje:", message);
           continue;
         }
-
         incidencesToCreate.push(incidenceData);
-
         const owner = await Owner.findOne({ phone: message.phone });
-
         if (owner) {
           incidenceData.ownerIds = owner._id;
-          console.error(incidenceData.ownerIds)
+          console.error(incidenceData.ownerIds);
         }
       }
-
-      console.log("Incidences to create:", incidencesToCreate);
-
+      console.log("Incidencias por crear:", incidencesToCreate);
       if (incidencesToCreate.length > 0) {
         console.log("Attempting to create incidences...");
         const createdIncidences = await Promise.all(
           incidencesToCreate.map(async (incidenceData) => {
             const incidence = await Incidence.create(incidenceData);
             return incidence;
-          }))
-
-        console.log("Created incidences:", createdIncidences);
-
-        const indicesToUpdate = createdIncidences.map((incidence) => incidence.index);
-
+          })
+        );
+        console.log("Incidencias creadas:", createdIncidences);
+        const indicesToUpdate = createdIncidences.map(
+          (incidence) => incidence.index
+        );
         messages.forEach((message) => {
           if (indicesToUpdate.includes(message.index)) {
             message.status = "received";
           }
         });
-
         await fs.writeFile(
           incidenceDataPath,
           JSON.stringify(messages, null, 2),
           "utf-8"
         );
-
         res
           .status(201)
-          .send({ message: "Incidencias creadas exitosamente", createdIncidences });
+          .send({
+            message: "Incidencias creadas exitosamente",
+            createdIncidences,
+          });
       } else {
-        res.status(200).send({ message: "No nuevas incidencias para crear" });
+        res.status(200).send({ message: "No hay nuevas incidencias por crear" });
       }
     } catch (error) {
       next(error);
     }
   },
-
   async createManualIncidence(req, res) {
     try {
       const {
@@ -128,7 +119,6 @@ const IncidenceController = {
         buildingId,
         ownerIds,
       } = req.body;
-
       const incidence = await Incidence.create({
         summary,
         category,
@@ -209,11 +199,15 @@ const IncidenceController = {
       if (!building) {
         return res.status(404).send({ message: "Finca no encontrada" });
       }
-      const incidences = await Incidence.find({ _id: { $in: building.incidenceIds } });
+      const incidences = await Incidence.find({
+        _id: { $in: building.incidenceIds },
+      });
       res.send(incidences);
     } catch (error) {
       console.error(error);
-      res.status(500).send({ message: "Error obteniendo incidencias por finca" });
+      res
+        .status(500)
+        .send({ message: "Error obteniendo incidencias por finca" });
     }
   },
   async updateIncidence(req, res) {
