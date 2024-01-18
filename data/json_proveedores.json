@@ -1,0 +1,902 @@
+[
+    {
+        "index": 0,
+        "id_proveedor": 1,
+        "company": "S.A. Pintores Galván",
+        "contactNumber": "686733799",
+        "service": "Pintura y reparación de paredes",
+        "zone": "Valencia",
+        "valoration": 1.50814106501101
+    },
+    {
+        "index": 1,
+        "id_proveedor": 2,
+        "company": "S.Com. Fontaneros Villena",
+        "contactNumber": "654038870",
+        "service": "Fontanería",
+        "zone": "Valencia",
+        "valoration": 3.2857431066341336
+    },
+    {
+        "index": 2,
+        "id_proveedor": 3,
+        "company": "S.C.P Mantenimiento Ruiz",
+        "contactNumber": "676425543",
+        "service": "Mantenimiento calefacción y aire acondicionado",
+        "zone": "Valencia",
+        "valoration": 1.7656854036927805
+    },
+    {
+        "index": 3,
+        "id_proveedor": 4,
+        "company": "S.L. Piscinas Castells",
+        "contactNumber": "638266961",
+        "service": "Limpieza y mantenimiento de piscinas",
+        "zone": "Valencia",
+        "valoration": 4.91216679727861
+    },
+    {
+        "index": 4,
+        "id_proveedor": 5,
+        "company": "S.L.N.E Mantenimiento Alcázar",
+        "contactNumber": "669959813",
+        "service": "Mantenimiento calefacción y aire acondicionado",
+        "zone": "Valencia",
+        "valoration": 3.4881581930190895
+    },
+    {
+        "index": 5,
+        "id_proveedor": 6,
+        "company": "S.L.N.E Mantenimiento Bas",
+        "contactNumber": "673082597",
+        "service": "Reparación ascensores",
+        "zone": "Valencia",
+        "valoration": 1.3482572210313437
+    },
+    {
+        "index": 6,
+        "id_proveedor": 7,
+        "company": "S.A.D Mantenimiento Yáñez",
+        "contactNumber": "620568619",
+        "service": "Mantenimiento áreas comunes",
+        "zone": "Valencia",
+        "valoration": 2.4963029342115615
+    },
+    {
+        "index": 7,
+        "id_proveedor": 8,
+        "company": "S.A. Mantenimiento Martin",
+        "contactNumber": "676825258",
+        "service": "Reparación ascensores",
+        "zone": "Valencia",
+        "valoration": 3.0580445009190202
+    },
+    {
+        "index": 8,
+        "id_proveedor": 9,
+        "company": "S.L.N.E Pintores Díaz",
+        "contactNumber": "663932457",
+        "service": "Pintura y reparación de paredes",
+        "zone": "Valencia",
+        "valoration": 3.002420902249033
+    },
+    {
+        "index": 9,
+        "id_proveedor": 10,
+        "company": "S.Coop. Electricistas Bru",
+        "contactNumber": "619979642",
+        "service": "Reparación instalaciones eléctricas",
+        "zone": "Valencia",
+        "valoration": 1.683872888406654
+    },
+    {
+        "index": 10,
+        "id_proveedor": 11,
+        "company": "S.L.N.E Mantenimiento Piquer",
+        "contactNumber": "636508754",
+        "service": "Mantenimiento áreas comunes",
+        "zone": "Valencia",
+        "valoration": 3.8286869352773847
+    },
+    {
+        "index": 11,
+        "id_proveedor": 12,
+        "company": "S.Coop. Plagas Morán",
+        "contactNumber": "662491740",
+        "service": "Control de plagas",
+        "zone": "Valencia",
+        "valoration": 3.0009508292027407
+    },
+    {
+        "index": 12,
+        "id_proveedor": 13,
+        "company": "S.Coop. Gestión de Residuos Villalonga",
+        "contactNumber": "618211327",
+        "service": "Gestión de residuos",
+        "zone": "Valencia",
+        "valoration": 3.2077812417291036
+    },
+    {
+        "index": 13,
+        "id_proveedor": 14,
+        "company": "S.L.L. Piscinas Caballero",
+        "contactNumber": "630321196",
+        "service": "Limpieza y mantenimiento de piscinas",
+        "zone": "Valencia",
+        "valoration": 1.0068160418646666
+    },
+    {
+        "index": 14,
+        "id_proveedor": 15,
+        "company": "S.L.U. Gestión de Residuos Verdejo",
+        "contactNumber": "656088341",
+        "service": "Gestión de residuos",
+        "zone": "Valencia",
+        "valoration": 4.987323978545866
+    },
+    {
+        "index": 15,
+        "id_proveedor": 16,
+        "company": "S.Coop. Mantenimiento Pagès",
+        "contactNumber": "645677516",
+        "service": "Reparación ascensores",
+        "zone": "Valencia",
+        "valoration": 4.7623138349231375
+    },
+    {
+        "index": 16,
+        "id_proveedor": 17,
+        "company": "S.Com. Piscinas Canales",
+        "contactNumber": "668729541",
+        "service": "Limpieza y mantenimiento de piscinas",
+        "zone": "Valencia",
+        "valoration": 2.8819643142031914
+    },
+    {
+        "index": 17,
+        "id_proveedor": 18,
+        "company": "S.Coop. Limpieza Jover",
+        "contactNumber": "620339540",
+        "service": "Servicios de limpieza",
+        "zone": "Valencia",
+        "valoration": 2.1805855723972867
+    },
+    {
+        "index": 18,
+        "id_proveedor": 19,
+        "company": "S.C.P Mantenimiento Ángel",
+        "contactNumber": "644930035",
+        "service": "Mantenimiento calefacción y aire acondicionado",
+        "zone": "Valencia",
+        "valoration": 4.6469686242329935
+    },
+    {
+        "index": 19,
+        "id_proveedor": 20,
+        "company": "S.L. Electricistas Peña",
+        "contactNumber": "666436481",
+        "service": "Reparación instalaciones eléctricas",
+        "zone": "Valencia",
+        "valoration": 3.6513784756217635
+    },
+    {
+        "index": 20,
+        "id_proveedor": 21,
+        "company": "S.C.P Piscinas Contreras",
+        "contactNumber": "620040432",
+        "service": "Limpieza y mantenimiento de piscinas",
+        "zone": "Valencia",
+        "valoration": 2.035974270650626
+    },
+    {
+        "index": 21,
+        "id_proveedor": 22,
+        "company": "S.Com. Pintores Vera",
+        "contactNumber": "635321252",
+        "service": "Pintura y reparación de paredes",
+        "zone": "Valencia",
+        "valoration": 3.9784286670260767
+    },
+    {
+        "index": 22,
+        "id_proveedor": 23,
+        "company": "S.L.L. Mantenimiento Rosado",
+        "contactNumber": "624025350",
+        "service": "Mantenimiento áreas comunes",
+        "zone": "Valencia",
+        "valoration": 1.6758257754307597
+    },
+    {
+        "index": 23,
+        "id_proveedor": 24,
+        "company": "S.Com. Emergencia Adadia",
+        "contactNumber": "649562242",
+        "service": "Servicios de emergencia",
+        "zone": "Valencia",
+        "valoration": 1.156132638785905
+    },
+    {
+        "index": 24,
+        "id_proveedor": 25,
+        "company": "S.Coop. Electricistas Lobato",
+        "contactNumber": "676939966",
+        "service": "Reparación instalaciones eléctricas",
+        "zone": "Valencia",
+        "valoration": 1.0504755150596603
+    },
+    {
+        "index": 25,
+        "id_proveedor": 26,
+        "company": "S.L.N.E Fontaneros Torres",
+        "contactNumber": "688737264",
+        "service": "Fontanería",
+        "zone": "Valencia",
+        "valoration": 2.088757652837725
+    },
+    {
+        "index": 26,
+        "id_proveedor": 27,
+        "company": "S.L. Electricistas Planas",
+        "contactNumber": "649325142",
+        "service": "Reparación instalaciones eléctricas",
+        "zone": "Valencia",
+        "valoration": 2.9051389197599415
+    },
+    {
+        "index": 27,
+        "id_proveedor": 28,
+        "company": "S.L. Gestión de Residuos Maldonado",
+        "contactNumber": "631422309",
+        "service": "Gestión de residuos",
+        "zone": "Valencia",
+        "valoration": 2.3135610171905507
+    },
+    {
+        "index": 28,
+        "id_proveedor": 29,
+        "company": "S.L.N.E Piscinas Fuentes",
+        "contactNumber": "641472381",
+        "service": "Limpieza y mantenimiento de piscinas",
+        "zone": "Valencia",
+        "valoration": 4.95782914616394
+    },
+    {
+        "index": 29,
+        "id_proveedor": 30,
+        "company": "S.A.T. Emergencia Robledo",
+        "contactNumber": "647422526",
+        "service": "Servicios de emergencia",
+        "zone": "Valencia",
+        "valoration": 2.865631496883
+    },
+    {
+        "index": 30,
+        "id_proveedor": 31,
+        "company": "S.Coop. Gestión de Residuos Cerdá",
+        "contactNumber": "643041132",
+        "service": "Gestión de residuos",
+        "zone": "Valencia",
+        "valoration": 1.6116746690500579
+    },
+    {
+        "index": 31,
+        "id_proveedor": 32,
+        "company": "S.A. Fontaneros Aroca",
+        "contactNumber": "682959491",
+        "service": "Fontanería",
+        "zone": "Valencia",
+        "valoration": 3.1396152052187842
+    },
+    {
+        "index": 32,
+        "id_proveedor": 33,
+        "company": "S.Com. Pintores Soto",
+        "contactNumber": "692662530",
+        "service": "Pintura y reparación de paredes",
+        "zone": "Valencia",
+        "valoration": 4.838105280821971
+    },
+    {
+        "index": 33,
+        "id_proveedor": 34,
+        "company": "S.L. Electricistas Pedrosa",
+        "contactNumber": "655137471",
+        "service": "Reparación instalaciones eléctricas",
+        "zone": "Valencia",
+        "valoration": 1.7712215743630093
+    },
+    {
+        "index": 34,
+        "id_proveedor": 35,
+        "company": "S.A.T. Mantenimiento Zurita",
+        "contactNumber": "682488855",
+        "service": "Reparación ascensores",
+        "zone": "Valencia",
+        "valoration": 1.709363883912769
+    },
+    {
+        "index": 35,
+        "id_proveedor": 36,
+        "company": "S.A. Piscinas Alsina",
+        "contactNumber": "693890304",
+        "service": "Limpieza y mantenimiento de piscinas",
+        "zone": "Valencia",
+        "valoration": 2.271767497590471
+    },
+    {
+        "index": 36,
+        "id_proveedor": 37,
+        "company": "S.Coop. Seguridad Sierra",
+        "contactNumber": "625732175",
+        "service": "Seguridad",
+        "zone": "Valencia",
+        "valoration": 3.6715228305831036
+    },
+    {
+        "index": 37,
+        "id_proveedor": 38,
+        "company": "S.Coop. Plagas Malo",
+        "contactNumber": "610144827",
+        "service": "Control de plagas",
+        "zone": "Valencia",
+        "valoration": 4.426671329689688
+    },
+    {
+        "index": 38,
+        "id_proveedor": 39,
+        "company": "S.Coop. Electricistas Gallardo",
+        "contactNumber": "645390489",
+        "service": "Reparación instalaciones eléctricas",
+        "zone": "Valencia",
+        "valoration": 4.401899083873264
+    },
+    {
+        "index": 39,
+        "id_proveedor": 40,
+        "company": "S.L. Gestión de Residuos Zurita",
+        "contactNumber": "696794268",
+        "service": "Gestión de residuos",
+        "zone": "Valencia",
+        "valoration": 3.0430136901282956
+    },
+    {
+        "index": 40,
+        "id_proveedor": 41,
+        "company": "S.Com. Seguridad Perera",
+        "contactNumber": "676166390",
+        "service": "Seguridad",
+        "zone": "Valencia",
+        "valoration": 4.345647289646315
+    },
+    {
+        "index": 41,
+        "id_proveedor": 42,
+        "company": "S.L. Fontaneros Águila",
+        "contactNumber": "669858032",
+        "service": "Fontanería",
+        "zone": "Valencia",
+        "valoration": 2.3567338866784886
+    },
+    {
+        "index": 42,
+        "id_proveedor": 43,
+        "company": "S.A. Emergencia Sanchez",
+        "contactNumber": "678880550",
+        "service": "Servicios de emergencia",
+        "zone": "Valencia",
+        "valoration": 4.9534548973033665
+    },
+    {
+        "index": 43,
+        "id_proveedor": 44,
+        "company": "S.L.N.E Mantenimiento Sanabria",
+        "contactNumber": "681500177",
+        "service": "Mantenimiento áreas comunes",
+        "zone": "Valencia",
+        "valoration": 1.572256060964464
+    },
+    {
+        "index": 44,
+        "id_proveedor": 45,
+        "company": "S.Com. Electricistas Cornejo",
+        "contactNumber": "698891206",
+        "service": "Reparación instalaciones eléctricas",
+        "zone": "Valencia",
+        "valoration": 1.0818392122091711
+    },
+    {
+        "index": 45,
+        "id_proveedor": 46,
+        "company": "S.C.P Electricistas Valcárcel",
+        "contactNumber": "685264155",
+        "service": "Reparación instalaciones eléctricas",
+        "zone": "Valencia",
+        "valoration": 1.76593921235028
+    },
+    {
+        "index": 46,
+        "id_proveedor": 47,
+        "company": "S.Coop. Fontaneros Sala",
+        "contactNumber": "634069916",
+        "service": "Fontanería",
+        "zone": "Valencia",
+        "valoration": 3.259845283791949
+    },
+    {
+        "index": 47,
+        "id_proveedor": 48,
+        "company": "S.L. Fontaneros Salcedo",
+        "contactNumber": "668955411",
+        "service": "Fontanería",
+        "zone": "Valencia",
+        "valoration": 3.73842939902976
+    },
+    {
+        "index": 48,
+        "id_proveedor": 49,
+        "company": "S.Coop. Limpieza Francisco",
+        "contactNumber": "693104258",
+        "service": "Servicios de limpieza",
+        "zone": "Valencia",
+        "valoration": 3.76554033774868
+    },
+    {
+        "index": 49,
+        "id_proveedor": 50,
+        "company": "S.L. Fontaneros Puente",
+        "contactNumber": "653886506",
+        "service": "Fontanería",
+        "zone": "Valencia",
+        "valoration": 3.045742588361429
+    },
+    {
+        "index": 50,
+        "id_proveedor": 51,
+        "company": "S.L. Mantenimiento Tovar",
+        "contactNumber": "650409103",
+        "service": "Reparación ascensores",
+        "zone": "Valencia",
+        "valoration": 3.4255470433162127
+    },
+    {
+        "index": 51,
+        "id_proveedor": 52,
+        "company": "S.Coop. Mantenimiento Jimenez",
+        "contactNumber": "624883435",
+        "service": "Mantenimiento áreas comunes",
+        "zone": "Valencia",
+        "valoration": 1.3494353232998737
+    },
+    {
+        "index": 52,
+        "id_proveedor": 53,
+        "company": "S.A. Pintores Cerdán",
+        "contactNumber": "682800643",
+        "service": "Pintura y reparación de paredes",
+        "zone": "Valencia",
+        "valoration": 3.0925577589705293
+    },
+    {
+        "index": 53,
+        "id_proveedor": 54,
+        "company": "S.A. Plagas Guzmán",
+        "contactNumber": "675255223",
+        "service": "Control de plagas",
+        "zone": "Valencia",
+        "valoration": 3.97611525979056
+    },
+    {
+        "index": 54,
+        "id_proveedor": 55,
+        "company": "S.Com. Mantenimiento Royo",
+        "contactNumber": "634299881",
+        "service": "Mantenimiento calefacción y aire acondicionado",
+        "zone": "Valencia",
+        "valoration": 2.9050581807630236
+    },
+    {
+        "index": 55,
+        "id_proveedor": 56,
+        "company": "S.A. Mantenimiento Ramos",
+        "contactNumber": "621180201",
+        "service": "Mantenimiento calefacción y aire acondicionado",
+        "zone": "Valencia",
+        "valoration": 4.268118101510279
+    },
+    {
+        "index": 56,
+        "id_proveedor": 57,
+        "company": "S.Coop. Piscinas Ferrándiz",
+        "contactNumber": "649171590",
+        "service": "Limpieza y mantenimiento de piscinas",
+        "zone": "Valencia",
+        "valoration": 4.660162030533387
+    },
+    {
+        "index": 57,
+        "id_proveedor": 58,
+        "company": "S.Com. Mantenimiento Camacho",
+        "contactNumber": "660092647",
+        "service": "Reparación ascensores",
+        "zone": "Valencia",
+        "valoration": 3.1907466537443288
+    },
+    {
+        "index": 58,
+        "id_proveedor": 59,
+        "company": "S.C.P Gestión de Residuos Jerez",
+        "contactNumber": "613970741",
+        "service": "Gestión de residuos",
+        "zone": "Valencia",
+        "valoration": 2.356224895240129
+    },
+    {
+        "index": 59,
+        "id_proveedor": 60,
+        "company": "S.Com. Mantenimiento Rivera",
+        "contactNumber": "665574242",
+        "service": "Reparación ascensores",
+        "zone": "Valencia",
+        "valoration": 4.549487702721553
+    },
+    {
+        "index": 60,
+        "id_proveedor": 61,
+        "company": "S.Coop. Limpieza Benítez",
+        "contactNumber": "627876305",
+        "service": "Servicios de limpieza",
+        "zone": "Valencia",
+        "valoration": 3.822648968827198
+    },
+    {
+        "index": 61,
+        "id_proveedor": 62,
+        "company": "S.A.D Pintores Frías",
+        "contactNumber": "630550568",
+        "service": "Pintura y reparación de paredes",
+        "zone": "Valencia",
+        "valoration": 4.515731366419404
+    },
+    {
+        "index": 62,
+        "id_proveedor": 63,
+        "company": "S.A. Electricistas Juan",
+        "contactNumber": "661627239",
+        "service": "Reparación instalaciones eléctricas",
+        "zone": "Valencia",
+        "valoration": 1.2215309578798537
+    },
+    {
+        "index": 63,
+        "id_proveedor": 64,
+        "company": "S.Com. Limpieza Castejón",
+        "contactNumber": "698880508",
+        "service": "Servicios de limpieza",
+        "zone": "Valencia",
+        "valoration": 3.3108878870008334
+    },
+    {
+        "index": 64,
+        "id_proveedor": 65,
+        "company": "S.Com. Mantenimiento Quero",
+        "contactNumber": "619990107",
+        "service": "Reparación ascensores",
+        "zone": "Valencia",
+        "valoration": 3.18161624748536
+    },
+    {
+        "index": 65,
+        "id_proveedor": 66,
+        "company": "S.L.N.E Gestión de Residuos Valera",
+        "contactNumber": "660449982",
+        "service": "Gestión de residuos",
+        "zone": "Valencia",
+        "valoration": 3.4765263641147266
+    },
+    {
+        "index": 66,
+        "id_proveedor": 67,
+        "company": "S.Com. Plagas Carrillo",
+        "contactNumber": "619915233",
+        "service": "Control de plagas",
+        "zone": "Valencia",
+        "valoration": 1.820215684740511
+    },
+    {
+        "index": 67,
+        "id_proveedor": 68,
+        "company": "S.L.L. Fontaneros Castellanos",
+        "contactNumber": "644753429",
+        "service": "Fontanería",
+        "zone": "Valencia",
+        "valoration": 3.2958712102658847
+    },
+    {
+        "index": 68,
+        "id_proveedor": 69,
+        "company": "S.A.D Piscinas Escribano",
+        "contactNumber": "690761194",
+        "service": "Limpieza y mantenimiento de piscinas",
+        "zone": "Valencia",
+        "valoration": 3.0697139672277483
+    },
+    {
+        "index": 69,
+        "id_proveedor": 70,
+        "company": "S.L. Mantenimiento González",
+        "contactNumber": "617025732",
+        "service": "Mantenimiento calefacción y aire acondicionado",
+        "zone": "Valencia",
+        "valoration": 2.4895747363394194
+    },
+    {
+        "index": 70,
+        "id_proveedor": 71,
+        "company": "S.A. Mantenimiento Perez",
+        "contactNumber": "668160059",
+        "service": "Reparación ascensores",
+        "zone": "Valencia",
+        "valoration": 4.321509155079566
+    },
+    {
+        "index": 71,
+        "id_proveedor": 72,
+        "company": "S.L.U. Seguridad Vazquez",
+        "contactNumber": "689018217",
+        "service": "Seguridad",
+        "zone": "Valencia",
+        "valoration": 2.993730302205709
+    },
+    {
+        "index": 72,
+        "id_proveedor": 73,
+        "company": "S.A. Limpieza Arévalo",
+        "contactNumber": "680276875",
+        "service": "Servicios de limpieza",
+        "zone": "Valencia",
+        "valoration": 2.4983920543636917
+    },
+    {
+        "index": 73,
+        "id_proveedor": 74,
+        "company": "S.L. Mantenimiento Guzmán",
+        "contactNumber": "685180717",
+        "service": "Mantenimiento calefacción y aire acondicionado",
+        "zone": "Valencia",
+        "valoration": 4.800963115528327
+    },
+    {
+        "index": 74,
+        "id_proveedor": 75,
+        "company": "S.L. Seguridad Colom",
+        "contactNumber": "685452816",
+        "service": "Seguridad",
+        "zone": "Valencia",
+        "valoration": 4.023171671438391
+    },
+    {
+        "index": 75,
+        "id_proveedor": 76,
+        "company": "S.A. Piscinas Llabrés",
+        "contactNumber": "621711024",
+        "service": "Limpieza y mantenimiento de piscinas",
+        "zone": "Valencia",
+        "valoration": 4.285939431698452
+    },
+    {
+        "index": 76,
+        "id_proveedor": 77,
+        "company": "S.L. Piscinas Calvet",
+        "contactNumber": "677885288",
+        "service": "Limpieza y mantenimiento de piscinas",
+        "zone": "Valencia",
+        "valoration": 4.228397315644762
+    },
+    {
+        "index": 77,
+        "id_proveedor": 78,
+        "company": "S.L.L. Pintores Galiano",
+        "contactNumber": "616368286",
+        "service": "Pintura y reparación de paredes",
+        "zone": "Valencia",
+        "valoration": 3.184456908188067
+    },
+    {
+        "index": 78,
+        "id_proveedor": 79,
+        "company": "S.Com. Fontaneros Palacio",
+        "contactNumber": "612276716",
+        "service": "Fontanería",
+        "zone": "Valencia",
+        "valoration": 2.621845010115506
+    },
+    {
+        "index": 79,
+        "id_proveedor": 80,
+        "company": "S.Coop. Mantenimiento Madrid",
+        "contactNumber": "633153821",
+        "service": "Mantenimiento áreas comunes",
+        "zone": "Valencia",
+        "valoration": 2.403871826803664
+    },
+    {
+        "index": 80,
+        "id_proveedor": 81,
+        "company": "S.Com. Plagas Rosado",
+        "contactNumber": "661449098",
+        "service": "Control de plagas",
+        "zone": "Valencia",
+        "valoration": 1.210144134195012
+    },
+    {
+        "index": 81,
+        "id_proveedor": 82,
+        "company": "S.C.P Electricistas Bayona",
+        "contactNumber": "661682233",
+        "service": "Reparación instalaciones eléctricas",
+        "zone": "Valencia",
+        "valoration": 1.7947746179291828
+    },
+    {
+        "index": 82,
+        "id_proveedor": 83,
+        "company": "S.Com. Emergencia Tamarit",
+        "contactNumber": "645144555",
+        "service": "Servicios de emergencia",
+        "zone": "Valencia",
+        "valoration": 2.0941365519451143
+    },
+    {
+        "index": 83,
+        "id_proveedor": 84,
+        "company": "S.L. Mantenimiento Sanmartín",
+        "contactNumber": "691883292",
+        "service": "Mantenimiento calefacción y aire acondicionado",
+        "zone": "Valencia",
+        "valoration": 3.679394608879841
+    },
+    {
+        "index": 84,
+        "id_proveedor": 85,
+        "company": "S.Com. Mantenimiento Blanco",
+        "contactNumber": "689881160",
+        "service": "Reparación ascensores",
+        "zone": "Valencia",
+        "valoration": 1.1228876962136534
+    },
+    {
+        "index": 85,
+        "id_proveedor": 86,
+        "company": "S.A. Mantenimiento Lledó",
+        "contactNumber": "689154200",
+        "service": "Reparación ascensores",
+        "zone": "Valencia",
+        "valoration": 1.655455246990834
+    },
+    {
+        "index": 86,
+        "id_proveedor": 87,
+        "company": "S.A. Electricistas Gelabert",
+        "contactNumber": "678935974",
+        "service": "Reparación instalaciones eléctricas",
+        "zone": "Valencia",
+        "valoration": 3.960944499089286
+    },
+    {
+        "index": 87,
+        "id_proveedor": 88,
+        "company": "S.A.U Mantenimiento Mayoral",
+        "contactNumber": "664919655",
+        "service": "Reparación ascensores",
+        "zone": "Valencia",
+        "valoration": 4.53194057061013
+    },
+    {
+        "index": 88,
+        "id_proveedor": 89,
+        "company": "S.Com. Mantenimiento Escolano",
+        "contactNumber": "671125760",
+        "service": "Mantenimiento áreas comunes",
+        "zone": "Valencia",
+        "valoration": 2.2360783744226436
+    },
+    {
+        "index": 89,
+        "id_proveedor": 90,
+        "company": "S.Coop. Mantenimiento Cazorla",
+        "contactNumber": "648430470",
+        "service": "Mantenimiento áreas comunes",
+        "zone": "Valencia",
+        "valoration": 2.3373693713846304
+    },
+    {
+        "index": 90,
+        "id_proveedor": 91,
+        "company": "S.A.U Mantenimiento Bilbao",
+        "contactNumber": "634327338",
+        "service": "Reparación ascensores",
+        "zone": "Valencia",
+        "valoration": 2.828260773309767
+    },
+    {
+        "index": 91,
+        "id_proveedor": 92,
+        "company": "S.A.T. Pintores Benito",
+        "contactNumber": "687794166",
+        "service": "Pintura y reparación de paredes",
+        "zone": "Valencia",
+        "valoration": 4.058958436748122
+    },
+    {
+        "index": 92,
+        "id_proveedor": 93,
+        "company": "S.L.N.E Pintores Duarte",
+        "contactNumber": "657220597",
+        "service": "Pintura y reparación de paredes",
+        "zone": "Valencia",
+        "valoration": 1.2577482838783323
+    },
+    {
+        "index": 93,
+        "id_proveedor": 94,
+        "company": "S.A.D Plagas Cañizares",
+        "contactNumber": "658102808",
+        "service": "Control de plagas",
+        "zone": "Valencia",
+        "valoration": 3.903341890513771
+    },
+    {
+        "index": 94,
+        "id_proveedor": 95,
+        "company": "S.L. Fontaneros Osuna",
+        "contactNumber": "672660332",
+        "service": "Fontanería",
+        "zone": "Valencia",
+        "valoration": 2.1838770295593166
+    },
+    {
+        "index": 95,
+        "id_proveedor": 96,
+        "company": "S.L.U. Gestión de Residuos Solsona",
+        "contactNumber": "644334652",
+        "service": "Gestión de residuos",
+        "zone": "Valencia",
+        "valoration": 3.119545155900748
+    },
+    {
+        "index": 96,
+        "id_proveedor": 97,
+        "company": "S.L. Limpieza Carranza",
+        "contactNumber": "641769939",
+        "service": "Servicios de limpieza",
+        "zone": "Valencia",
+        "valoration": 3.788820644416638
+    },
+    {
+        "index": 97,
+        "id_proveedor": 98,
+        "company": "S.Com. Seguridad Garay",
+        "contactNumber": "668036777",
+        "service": "Seguridad",
+        "zone": "Valencia",
+        "valoration": 2.3013350988510446
+    },
+    {
+        "index": 98,
+        "id_proveedor": 99,
+        "company": "S.Coop. Pintores Ramírez",
+        "contactNumber": "623183961",
+        "service": "Pintura y reparación de paredes",
+        "zone": "Valencia",
+        "valoration": 4.860630778428307
+    },
+    {
+        "index": 99,
+        "id_proveedor": 100,
+        "company": "S.C.P Piscinas Bermúdez",
+        "contactNumber": "620124734",
+        "service": "Limpieza y mantenimiento de piscinas",
+        "zone": "Valencia",
+        "valoration": 1.037650924086856
+    }
+]
