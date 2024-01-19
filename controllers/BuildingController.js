@@ -28,10 +28,15 @@ const BuildingController = {
   },
   async getAllBuildings(req, res) {
     try {
-      const buildings = await Building.find().populate({
-        path: "incidenceIds",
-        select: "status",
-      });
+      const buildings = await Building.find()
+        .populate({
+          path: "incidenceIds",
+          select: "status",
+        })
+        .populate({
+          path: "todoIds",
+          select: "title description completed",
+        });
       res.send(buildings);
     } catch (error) {
       console.error(error);

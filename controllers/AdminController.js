@@ -3,6 +3,54 @@ const Building = require("../models/Building");
 const Owner = require("../models/Owner");
 const Incidence = require("../models/Incidence");
 
+const incidenceStatusOptions = [
+  "Recibida",
+  "En proceso",
+  "Bajo Investigación",
+  "Esperando Aprobación",
+  "Contactada",
+  "Esperando Información",
+  "Esperando Acción",
+  "Completada",
+  "Revisión post resolución"
+];
+
+const fs = require("fs");
+
+const loadAndSaveTodos = async () => {
+  try {
+    const rawData = fs.readFileSync("./data/json_tareas.json");
+    const todosData = JSON.parse(rawData);
+
+    // Create and assign todos to buildings
+    for (const todoData of todosData) {
+      const { title, description, completed, buildingId } = todoData;
+
+      // Create a new todo
+      const newTodo = await Todo.create({
+        title,
+        description,
+        completed,
+        buildingId,
+      });
+
+      if (buildingId) {
+        // Find the corresponding building and update todoIds
+        const updatedBuilding = await Building.findByIdAndUpdate(
+          buildingId,
+          { $push: { todoIds: newTodo._id } },
+          { new: true }
+        );
+        console.log('buildign id pushed', updatedBuilding)
+      }
+    }
+
+    console.log('TODOs uploaded to MongoDB successfully');
+  } catch (error) {
+    console.error('Error uploading TODOs:', error.message);
+  }
+};
+
 const AdminController = {
   async createBuildingsFromJson(req, res) {
     try {
@@ -98,6 +146,40 @@ const AdminController = {
       res.status(501).send({ message: "Error mapeando las fincas" });
     }
   },
+
+
+  // Read TODOs from file, map, and save to MongoDB
+  async uploadTodos(req, res) {
+    try {
+      await loadAndSaveTodos();
+      res.status(201).json({ message: 'TODOs uploaded to MongoDB successfully' });
+    } catch (error) {
+      console.error('Error uploading TODOs:', error.message);
+      res.status(500).json({ message: 'Internal server error' });
+    }
+  },
+  async updateStatusRandomly(req, res) {
+    try {
+      // Find all incidences
+      const incidences = await Incidence.find();
+
+      // Update each incidence with a random status
+      for (const incidence of incidences) {
+        const randomStatus =
+          incidenceStatusOptions[
+          Math.floor(Math.random() * incidenceStatusOptions.length)
+          ];
+
+        incidence.status = randomStatus;
+        await incidence.save();
+      }
+
+      res.status(200).send({ message: "Status updated successfully" });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send({ message: "Error updating incidence status" });
+    }
+  }
 };
 
 module.exports = AdminController;

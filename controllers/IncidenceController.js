@@ -231,6 +231,22 @@ const IncidenceController = {
   async deleteIncidence(req, res) {
     try {
       const incidence = await Incidence.findByIdAndDelete(req.params.id);
+      const incidenceId = req.params.id
+      await Building.updateMany(
+        { incidenceIds: incidenceId },
+        { $pull: { incidenceIds: incidenceId } }
+      );
+
+      await Owner.updateMany(
+        { incidenceIds: incidenceId },
+        { $pull: { incidenceIds: incidenceId } }
+      );
+
+      await Door.updateMany(
+        { incidenceIds: incidenceId },
+        { $pull: { incidenceIds: incidenceId } }
+      );
+
       if (!incidence) {
         return res
           .status(404)

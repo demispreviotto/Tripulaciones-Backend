@@ -1,0 +1,98 @@
+[
+    {
+        "title": "Realizar inspección de seguridad",
+        "description": "Revisar y asegurar que todas las áreas comunes estén en condiciones seguras.",
+        "completed": false,
+        "buildingId": "65a8e3ecff51d92a06ccd109"
+    },
+    {
+        "title": "Programar mantenimiento de ascensores",
+        "description": "Coordinar con la empresa de mantenimiento para programar la revisión y servicio de los ascensores.",
+        "completed": true,
+        "buildingId": "65a8e3ecff51d92a06ccd109"
+    },
+    {
+        "title": "Organizar reunión de condominio",
+        "description": "Planificar y enviar convocatoria para la próxima reunión de propietarios del edificio.",
+        "completed": false,
+        "buildingId": "65a8e3ecff51d92a06ccd109"
+    },
+    {
+        "title": "Actualizar registros de ingreso y salida",
+        "description": "Mantener actualizados los registros de personas que ingresan y salen del edificio.",
+        "completed": false,
+        "buildingId": "65a8e3ecff51d92a06ccd109"
+    },
+    {
+        "title": "Revisar estado de las áreas verdes",
+        "description": "Evaluar y programar mantenimiento para áreas verdes y jardines del edificio.",
+        "completed": true,
+        "buildingId": "65a8e3ecff51d92a06ccd10c"
+    },
+    {
+        "title": "Inspección de instalaciones eléctricas",
+        "description": "Contratar a un profesional para realizar una inspección completa de las instalaciones eléctricas del edificio.",
+        "completed": false,
+        "buildingId": "65a8e3ecff51d92a06ccd10c"
+    },
+    {
+        "title": "Verificar el estado de las salidas de emergencia",
+        "description": "Asegurarse de que las salidas de emergencia estén despejadas y en buen estado de funcionamiento.",
+        "completed": false,
+        "buildingId": "65a8e3ecff51d92a06ccd10c"
+    },
+    {
+        "title": "Renovar contratos de servicios",
+        "description": "Revisar y renovar los contratos con proveedores de servicios como limpieza, seguridad, y mantenimiento.",
+        "completed": true,
+        "buildingId": "65a8e3ecff51d92a06ccd10f"
+    },
+    {
+        "title": "Organizar jornada de limpieza comunitaria",
+        "description": "Planificar un día para que los residentes participen en una jornada de limpieza y mantenimiento comunitario.",
+        "completed": false,
+        "buildingId": "65a8e3ecff51d92a06ccd10f"
+    },
+    {
+        "title": "Implementar medidas de ahorro de energía",
+        "description": "Investigar y aplicar medidas para reducir el consumo de energía en el edificio.",
+        "completed": true,
+        "buildingId": "65a8e3ecff51d92a06ccd10f"
+    },
+    {
+        "title": "Realizar inspección de áreas comunes",
+        "description": "Programar una inspección detallada de las áreas comunes, incluyendo pasillos, escaleras y espacios compartidos.",
+        "completed": false,
+        "buildingId": "65a8e3ecff51d92a06ccd10f"
+    },
+    {
+        "title": "Actualizar información de contactos de emergencia",
+        "description": "Verificar y actualizar la información de contactos de emergencia de todos los residentes y empleados del edificio.",
+        "completed": false,
+        "buildingId": "65a8e3ecff51d92a06ccd112"
+    },
+    {
+        "title": "Revisar sistemas de seguridad",
+        "description": "Contratar a un profesional para revisar y mantener los sistemas de seguridad del edificio, como cámaras y alarmas.",
+        "completed": false,
+        "buildingId": "65a8e3ecff51d92a06ccd112"
+    },
+    {
+        "title": "Planificar simulacro de evacuación",
+        "description": "Coordinar y llevar a cabo un simulacro de evacuación para asegurar que todos los residentes estén familiarizados con los procedimientos de emergencia.",
+        "completed": false,
+        "buildingId": "65a8e3ecff51d92a06ccd112"
+    },
+    {
+        "title": "Evaluar necesidades de mantenimiento",
+        "description": "Realizar una evaluación completa de las necesidades de mantenimiento del edificio y priorizar las tareas pendientes.",
+        "completed": false,
+        "buildingId": "65a8e3ecff51d92a06ccd112"
+    },
+    {
+        "title": "Organizar evento comunitario",
+        "description": "Planificar un evento comunitario para fomentar la interacción entre los residentes y fortalecer el sentido de comunidad.",
+        "completed": false,
+        "buildingId": "65a8e3edff51d92a06ccd115"
+    }
+]
